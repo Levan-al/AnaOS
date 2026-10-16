@@ -21,6 +21,8 @@ Copyright (C) The AnaOS Project
 
 ## Quick links
 
+Full index: [`docs/DOCS_INDEX.md`](docs/DOCS_INDEX.md).
+
 | Doc | Path |
 | --- | --- |
 | Strategy (A/B/C) | [`docs/STRATEGY.md`](docs/STRATEGY.md) |

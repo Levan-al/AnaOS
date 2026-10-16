@@ -603,15 +603,19 @@ tasks:
     category: distribution
     dependencies: [66]
     status: in_progress
+    notes: "Architecture draft; implementation after CLI path."
     artifacts:
       - docs/DISTRIBUTION.md
+      - docs/WEBUSB_INSTALLER.md
   - id: 71
     title: Create CLI installer and documentation
     category: distribution
     dependencies: [66]
     status: in_progress
+    notes: "Interface + safety docs; script not shipped yet."
     artifacts:
       - docs/DISTRIBUTION.md
+      - docs/INSTALL_CLI.md
   - id: 72
     title: Ensure rollback protection
     category: distribution
@@ -619,6 +623,7 @@ tasks:
     status: in_progress
     artifacts:
       - docs/DISTRIBUTION.md
+      - docs/ROLLBACK_PROTECTION.md
   - id: 73
     title: Create remote attestation server
     category: attestation
@@ -679,6 +684,7 @@ tasks:
     status: in_progress
     artifacts:
       - docs/TESTING.md
+      - docs/SECURITY_AUDIT.md
   - id: 82
     title: Launch bug bounty program
     category: testing
@@ -687,6 +693,7 @@ tasks:
     notes: "Process outlined; launch after public release channel."
     artifacts:
       - docs/TESTING.md
+      - docs/BUG_BOUNTY.md
   - id: 83
     title: Write complete build documentation
     category: documentation
@@ -752,6 +759,7 @@ tasks:
     status: in_progress
     artifacts:
       - docs/LONGTERM_OPS.md
+      - docs/MONTHLY_SECURITY_PATCHES.md
   - id: 91
     title: Standardize new Android version porting process
     category: longterm
