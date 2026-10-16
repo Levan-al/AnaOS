@@ -25,9 +25,11 @@ Copyright (C) The AnaOS Project
 | --- | --- |
 | Strategy (A/B/C) | [`docs/STRATEGY.md`](docs/STRATEGY.md) |
 | Security merge gate (B) | [`docs/SECURITY_MERGE_GATE.md`](docs/SECURITY_MERGE_GATE.md) |
+| Key ceremony checklist | [`docs/KEY_CEREMONY_CHECKLIST.md`](docs/KEY_CEREMONY_CHECKLIST.md) |
 | Branding | [`docs/BRANDING.md`](docs/BRANDING.md) |
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |
+| AOSP 17 tag shortlist | [`docs/AOSP17_TAG_SHORTLIST.md`](docs/AOSP17_TAG_SHORTLIST.md) |
 | PQC roadmap | [`docs/PQC_ROADMAP.md`](docs/PQC_ROADMAP.md) |
 | AI alternatives | [`docs/AI_ALTERNATIVES.md`](docs/AI_ALTERNATIVES.md) |
 | Contributing | [`CONTRIBUTING.md`](CONTRIBUTING.md) |

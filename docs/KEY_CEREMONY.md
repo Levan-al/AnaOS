@@ -29,11 +29,13 @@ This document never contains private key material.
 
 ## Ceremony steps (summary)
 
+Printable checklist: **`docs/KEY_CEREMONY_CHECKLIST.md`**.
+
 1. Boot offline machine from known-good media  
 2. Verify tooling hashes (`development/tools/make_key`, `openssl`, `avbtool`)  
 3. Generate each keypair; export **public** PEMs only to a clean USB  
 4. Encrypt private key store (LUKS / age); split recovery with Shamir (see KEY_RECOVERY.md)  
-5. Publish public fingerprints as signed JSON (TASK_073)  
+5. Record public hashes (`scripts/record-public-key-fingerprints.sh`); publish signed JSON (TASK_073)  
 6. Seal offline store; log ceremony completion  
 
 ## Explicit bans

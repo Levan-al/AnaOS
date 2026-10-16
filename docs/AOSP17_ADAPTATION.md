@@ -10,6 +10,9 @@ Fast, controlled absorption of Android 17 / AOSP 17 platform changes.
 
 ## Pin criteria (TASK_095)
 
+Tag shortlist and P0 choice: **`docs/AOSP17_TAG_SHORTLIST.md`**
+(current P0: `android-17.0.0_r1`).
+
 A release pin is valid only if **all** are true:
 
 1. Manifest points at an explicit AOSP / Android 17 tag or dated security release (not `android-latest-release`).  

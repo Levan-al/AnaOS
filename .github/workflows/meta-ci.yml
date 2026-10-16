@@ -24,6 +24,8 @@ jobs:
           test -f docs/KEY_CEREMONY.md
           test -f docs/STRATEGY.md
           test -f docs/SECURITY_MERGE_GATE.md
+          test -f docs/KEY_CEREMONY_CHECKLIST.md
+          test -f docs/AOSP17_TAG_SHORTLIST.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml
