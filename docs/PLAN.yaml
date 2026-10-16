@@ -475,7 +475,10 @@ tasks:
     title: Redesign Setup Wizard
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/SetupWizard."
+    artifacts:
+      - apps/SetupWizard/
   - id: 63
     title: Harden Messaging, Dialer, Contacts, Gallery
     category: apps
@@ -680,7 +683,10 @@ tasks:
     category: strategy
     track: B
     dependencies: [85]
-    status: pending
+    status: in_progress
+    notes: "Draft THREAT_MODEL_ANDROID17.md; expand after hardening lands."
+    artifacts:
+      - docs/THREAT_MODEL_ANDROID17.md
   - id: 99
     title: PQC inventory and hybrid OTA/signing design
     category: strategy

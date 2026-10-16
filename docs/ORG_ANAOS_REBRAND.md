@@ -30,7 +30,7 @@ only on AnaOS-authored files.
 | `platform_packages_apps_Camera` | `org.anaos.camera` | [x] scaffold | n/a | [ ] | [ ] |
 | `platform_packages_apps_AppStore` | `org.anaos.appstore` | [x] scaffold | [x] | [ ] | [ ] |
 | `platform_packages_apps_PdfViewer` | `org.anaos.pdfviewer` | [x] scaffold | n/a | [ ] | [ ] |
-| `platform_packages_apps_SetupWizard` | `org.anaos.setupwizard` | [ ] | [ ] | [ ] | [ ] |
+| `platform_packages_apps_SetupWizard` | `org.anaos.setupwizard` | [x] scaffold | n/a | [ ] | [ ] |
 | `Auditor` (upstream fork) | align or archive | [ ] | [ ] | [ ] | [ ] |
 | `PdfViewer` (upstream fork) | align or archive | [ ] | [ ] | [ ] | [ ] |
 

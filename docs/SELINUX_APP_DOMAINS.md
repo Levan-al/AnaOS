@@ -10,5 +10,6 @@ Stub policy names for first-party apps. Concrete `.te` files land with
 | `org.anaos.camera` | `anaos_camera` | Camera HAL; no unsolicited network |
 | `org.anaos.pdfviewer` | `anaos_pdfviewer` | Isolated; content URI only |
 | `org.anaos.appstore` | `anaos_appstore` | Network to `apps.anaos.org` only |
+| `org.anaos.setupwizard` | `anaos_setupwizard` | First-boot only; no persistent network |
 
 Rules: no new `permissive` domains on `user` builds. Track B gate applies.

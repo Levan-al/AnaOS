@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AnaOS local manifest fragment (post-AOSP sync).
+  Copy to $AOSP/.repo/local_manifests/anaos.xml then repo sync.
+
+  Until AnaOS forks replace paths fully, prefer scripts/overlay-anaos-into-aosp.sh
+  from the meta repo for device/anaos + branding.
+-->
+<manifest>
+  <remote name="anaos" fetch="https://github.com/Levan-al/" />
+
+  <!-- Branding injection -->
+  <project path="branding" name="branding" remote="anaos" revision="main" />
+
+  <!-- Product / device stubs (meta tree until split) -->
+  <!-- device/anaos currently lives in Levan-al/AnaOS meta; overlay script preferred. -->
+
+  <project path="packages/apps/AnaOSUpdater" name="platform_packages_apps_Updater" remote="anaos" revision="main" />
+  <project path="packages/apps/AnaOSAuditor" name="platform_packages_apps_Auditor" remote="anaos" revision="main" />
+  <project path="packages/apps/AnaOSCamera" name="platform_packages_apps_Camera" remote="anaos" revision="main" />
+  <project path="packages/apps/AnaOSPdfViewer" name="platform_packages_apps_PdfViewer" remote="anaos" revision="main" />
+  <project path="packages/apps/AnaOSAppStore" name="platform_packages_apps_AppStore" remote="anaos" revision="main" />
+  <project path="packages/apps/AnaOSSetupWizard" name="platform_packages_apps_SetupWizard" remote="anaos" revision="main" />
+</manifest>
