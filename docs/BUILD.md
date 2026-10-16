@@ -33,12 +33,21 @@ See `docs/REPRODUCIBLE_BUILDS.md`.
 ## Emulator user build (TASK_018)
 
 ```bash
+# After SYNC_OK — overlay AnaOS product trees into the AOSP checkout:
+#   rsync device/anaos branding → $AOSP/
 source build/envsetup.sh
 lunch sdk_phone64_x86_64-user   # or listed fallbacks in remote-aosp-build.sh
+# When device/anaos is overlaid:
+# lunch anaos_emulator-userdebug
 m -j8
 ```
 
 Verify branding strings / fingerprint contain `AnaOS` / `Ana` / `org.anaos`.
+
+## Pixel 8 stub (TASK_028)
+
+`lunch ana_shiba-userdebug` requires vendor extract (TASK_029). Product stubs live in
+`device/anaos/shiba/` — see `docs/DEVICES.md`.
 
 ## Signing
 
@@ -52,3 +61,4 @@ Do not copy `.pk8` keys onto rented cloud hosts.
 | OOM during `m` | Lower `-j`, add swap, or larger machine |
 | Disk full | Need ≥400–600 GB free for one build |
 | Wrong fingerprint brand | Missing branding / official.mk inherit |
+| `Cannot initialize work tree` mid-sync | Re-run `scripts/remote-repair-sync.sh` after sync exits |

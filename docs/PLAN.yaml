@@ -292,7 +292,10 @@ tasks:
     title: Write device porting documentation
     category: documentation
     dependencies: [32]
-    status: pending
+    status: in_progress
+    notes: "DEVICE_PORTING.md draft ahead of first locked device build."
+    artifacts:
+      - docs/DEVICE_PORTING.md
   - id: 34
     title: Create own kernel trees
     category: kernel
