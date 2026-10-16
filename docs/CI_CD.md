@@ -1,0 +1,27 @@
+# CI/CD (TASK_005)
+
+## Chosen stack (zero-cost first)
+
+| Stage | Tool |
+| --- | --- |
+| Meta / docs / app lint | GitHub Actions (public) — `.github/workflows/meta-ci.yml` |
+| Full AOSP build | Self-hosted or rented Linux (Hetzner `anaos-build` / future farm) |
+| Optional later | Woodpecker / Jenkins on self-hosted |
+
+## Pipeline stages (target)
+
+1. **sync** — `repo sync` at pinned manifest  
+2. **branding** — apply `branding/` + `device/anaos`  
+3. **build** — `lunch` + `m` / `target-files-package`  
+4. **test** — smoke + security regression (TASK_077)  
+5. **sign** — offline / HSM only (never in public GHA)  
+6. **upload** — releases host (TASK_006; needs domains)  
+7. **notify** — maintainers  
+
+Production release requires **manual approval** before sign/upload.
+
+## Current status
+
+- [x] Meta CI on GitHub Actions  
+- [ ] Self-hosted runner label for AOSP  
+- [ ] Staged release workflow (TASK_068 / TASK_069)  
