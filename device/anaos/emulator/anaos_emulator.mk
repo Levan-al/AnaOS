@@ -10,7 +10,8 @@ $(call inherit-product-if-exists, device/generic/goldfish/product/phone.mk)
 $(call inherit-product, device/anaos/common/anaos.mk)
 
 PRODUCT_NAME := anaos_emulator
-PRODUCT_DEVICE := anaos_emulator
+# Must match directory name device/anaos/emulator/ (BoardConfig.mk lookup).
+PRODUCT_DEVICE := emulator
 PRODUCT_MODEL := AnaOS Emulator
 PRODUCT_BRAND := Ana
 PRODUCT_MANUFACTURER := AnaOS
