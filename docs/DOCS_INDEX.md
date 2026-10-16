@@ -91,11 +91,16 @@ duplicating long tables.
 | [AOSP_APPS_HARDENING.md](AOSP_APPS_HARDENING.md) | Stock apps |
 | [BROWSER_WEBVIEW.md](BROWSER_WEBVIEW.md) | Vanadium-class browser |
 | [APPSTORE.md](APPSTORE.md) | First-party store |
+| [CAMERA_APP.md](CAMERA_APP.md) | Camera |
+| [PDF_VIEWER.md](PDF_VIEWER.md) | PDF viewer |
+| [SETUP_WIZARD.md](SETUP_WIZARD.md) | First-boot wizard |
+| [EXACT_CALCULATOR.md](EXACT_CALCULATOR.md) | Calculator / utils |
 | [ENCRYPTED_BACKUP.md](ENCRYPTED_BACKUP.md) | Backup |
 | [ORG_ANAOS_REBRAND.md](ORG_ANAOS_REBRAND.md) | Rebrand map |
 | [PQC_ROADMAP.md](PQC_ROADMAP.md) | TRACK C1 |
 | [AI_ALTERNATIVES.md](AI_ALTERNATIVES.md) / [AI_THREAT_MODEL.md](AI_THREAT_MODEL.md) | TRACK C2 |
 | [BRANDING.md](BRANDING.md) | Brand rules |
+| [FAQ.md](FAQ.md) | FAQ draft |
 
 ## Ops & testing
 

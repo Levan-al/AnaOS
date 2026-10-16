@@ -495,9 +495,10 @@ tasks:
     category: apps
     dependencies: [13, 45]
     status: in_progress
-    notes: "Scaffold at apps/Camera (org.anaos.camera)."
+    notes: "Scaffold + CAMERA_APP.md design."
     artifacts:
       - apps/Camera/
+      - docs/CAMERA_APP.md
   - id: 57
     title: Create Browser + WebView (Vanadium equivalent)
     category: apps
@@ -512,9 +513,10 @@ tasks:
     category: apps
     dependencies: [13]
     status: in_progress
-    notes: "Scaffold at apps/PdfViewer."
+    notes: "Scaffold + PDF_VIEWER.md design."
     artifacts:
       - apps/PdfViewer/
+      - docs/PDF_VIEWER.md
   - id: 59
     title: Create Auditor app
     category: apps
@@ -547,9 +549,10 @@ tasks:
     category: apps
     dependencies: [13]
     status: in_progress
-    notes: "Scaffold at apps/SetupWizard."
+    notes: "Scaffold + SETUP_WIZARD.md privacy defaults."
     artifacts:
       - apps/SetupWizard/
+      - docs/SETUP_WIZARD.md
   - id: 63
     title: Harden Messaging, Dialer, Contacts, Gallery
     category: apps
@@ -571,6 +574,7 @@ tasks:
     status: in_progress
     artifacts:
       - apps/ExactCalculator/README.md
+      - docs/EXACT_CALCULATOR.md
   - id: 66
     title: Create own update server architecture
     category: distribution

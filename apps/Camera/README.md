@@ -2,8 +2,9 @@
 
 Scaffold for TASK_056. Privacy-oriented camera (GrapheneOS Camera lineage later).
 
-- Application ID: `org.anaos.camera`
-- Signing: dedicated app key (`docs/APP_SIGNING.md`)
-- No cloud upload by default (Track B)
+- Application ID: `org.anaos.camera`  
+- Design: `docs/CAMERA_APP.md`  
+- Signing: dedicated app key (`docs/APP_SIGNING.md`)  
+- No cloud upload by default (Track B)  
 
 Platform tree: `platform_packages_apps_Camera`.
