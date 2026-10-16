@@ -183,7 +183,8 @@ tasks:
     status: in_progress
     notes: >
       Hetzner anaos-build (188.34.189.66): AOSP android-latest-release repo sync
-      running in tmux session aosp-sync; log /opt/anaos/sync.log
+      still running (~67GB tree, tmux aosp-sync); SYNC_OK not yet written.
+      Transient checkout errors seen for ltp/mbedtls/enum34 — monitor end of sync.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing
@@ -209,16 +210,20 @@ tasks:
     title: Generate app signing keys
     category: signing
     dependencies: [7]
-    status: pending
-    notes: "After platform keys; dedicated app keys where needed."
+    status: in_progress
+    notes: "Script + APP_SIGNING.md ready; offline keygen still pending (air-gap)."
+    artifacts:
+      - script/make_anaos_app_keys.sh
+      - docs/APP_SIGNING.md
   - id: 23
     title: Document key ceremony and secure storage
     category: signing
     dependencies: [19, 20, 21, 22]
     status: in_progress
-    notes: "KEY_CEREMONY.md drafted ahead of offline keygen; finalize after TASK_019–022."
+    notes: "KEY_CEREMONY.md + APP_SIGNING.md; finalize fingerprints after offline keygen."
     artifacts:
       - docs/KEY_CEREMONY.md
+      - docs/APP_SIGNING.md
   - id: 24
     title: Define key rotation and recovery procedures
     category: signing
@@ -246,22 +251,33 @@ tasks:
     status: in_progress
     artifacts:
       - adevtool/README.md
-    notes: "Stub + checklist; track grapheneos_adevtool fork for implementation."
+    notes: "Stub + checklist targeting shiba; track grapheneos_adevtool fork."
   - id: 28
     title: Integrate first official device
     category: device
     dependencies: [27, 15]
-    status: pending
+    status: in_progress
+    notes: "Pixel 8 (shiba) product/board stubs + docs/DEVICES.md; vendor extract TBD."
+    artifacts:
+      - device/anaos/shiba/
+      - docs/DEVICES.md
   - id: 29
     title: Automate vendor files extraction
     category: device
     dependencies: [27]
     status: pending
+    notes: "Blocked on adevtool implementation; first SKU shiba."
+    artifacts:
+      - docs/VENDOR_EXTRACT.md
   - id: 30
     title: Add device-specific sepolicy and init scripts
     category: device
     dependencies: [28]
-    status: pending
+    status: in_progress
+    notes: "Placeholder dirs under device/anaos/shiba/{sepolicy,init}; fill after vendor extract."
+    artifacts:
+      - device/anaos/shiba/sepolicy/
+      - device/anaos/shiba/init/
   - id: 31
     title: First successful user build on real device + verified boot
     category: device

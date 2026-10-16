@@ -25,7 +25,7 @@ This document never contains private key material.
 | releasekey | `releasekey.x509.pem` | Default release APK signing |
 | otakey | `otakey.x509.pem` or policy: reuse releasekey | OTA packages |
 | avb | 4096-bit RSA; public for device embedding | Verified Boot |
-| app-* | per-app where needed | Camera, Updater, Auditor, AppStore |
+| app-* | per-app where needed | see `docs/APP_SIGNING.md` + `script/make_anaos_app_keys.sh` |
 
 ## Ceremony steps (summary)
 

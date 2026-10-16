@@ -9,10 +9,11 @@ AnaOS vendor extraction / device-tree generation tool.
 
 ## Checklist (when implementing)
 
-- [ ] Download factory image for supported Pixel  
+- [ ] Download factory image for **Pixel 8 (`shiba`)** — first SKU (`docs/DEVICES.md`)  
 - [ ] Extract proprietary blobs  
-- [ ] Generate `device/anaos/<codename>/` fragments  
+- [ ] Generate / complete `device/anaos/shiba/` fragments  
 - [ ] Hash verification of vendor files  
 - [ ] Document in DEVICE_PORTING.md (TASK_033)  
 
 Until then, prefer tracking GrapheneOS `adevtool` and rebranding paths/`org.anaos` as needed.
+Stub product already lives at `device/anaos/shiba/`.
