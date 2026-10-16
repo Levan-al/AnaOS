@@ -31,6 +31,7 @@ Full index: [`docs/DOCS_INDEX.md`](docs/DOCS_INDEX.md).
 | Branding | [`docs/BRANDING.md`](docs/BRANDING.md) |
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | Status report | [`docs/STATUS_REPORT.md`](docs/STATUS_REPORT.md) |
+| Near-term roadmap | [`docs/ROADMAP_NOW.md`](docs/ROADMAP_NOW.md) |
 | org.anaos rebrand | [`docs/ORG_ANAOS_REBRAND.md`](docs/ORG_ANAOS_REBRAND.md) |
 | Apps scaffolds | [`apps/`](apps/) |
 | Cost ops (Hetzner) | [`docs/COST_OPS.md`](docs/COST_OPS.md) |

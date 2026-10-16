@@ -12,6 +12,8 @@ duplicating long tables.
 | [STATUS_REPORT.md](STATUS_REPORT.md) | Live bring-up status |
 | [PRODUCT_SCOPE.md](PRODUCT_SCOPE.md) | AnaOS vs AI Ops boundary |
 | [COST_OPS.md](COST_OPS.md) | Hetzner / idle billing |
+| [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term bring-up order |
+| [DOMAINS.md](DOMAINS.md) | DNS plan (TASK_002) |
 
 ## Build & source
 
@@ -26,6 +28,7 @@ duplicating long tables.
 | [AOSP17_TAG_SHORTLIST.md](AOSP17_TAG_SHORTLIST.md) | Tag pin |
 | [AOSP17_REBASE_LEDGER.md](AOSP17_REBASE_LEDGER.md) | Conflict ledger |
 | [CI_CD.md](CI_CD.md) | CI stages |
+| [SELF_HOSTED_CI.md](SELF_HOSTED_CI.md) | AOSP runner design |
 | [POST_BUILD_OVERLAY.md](POST_BUILD_OVERLAY.md) | After BUILD_OK |
 | [EMULATOR_SMOKE.md](EMULATOR_SMOKE.md) | Emulator checklist |
 | [BUILD_FAILURE_PLAYBOOK.md](BUILD_FAILURE_PLAYBOOK.md) | Host failure triage |

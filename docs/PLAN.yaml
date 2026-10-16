@@ -70,6 +70,8 @@ tasks:
     dependencies: [1]
     status: blocked
     blocked_reason: Deferred — not required for early Android source work; anaos.org later
+    artifacts:
+      - docs/DOMAINS.md
   - id: 3
     title: Create source control organization
     category: foundation
@@ -95,10 +97,11 @@ tasks:
     category: infrastructure
     dependencies: [4]
     status: in_progress
-    notes: "meta-ci + CI_CD.md stages; AOSP sign/upload not in public GHA."
+    notes: "meta-ci + CI_CD.md; AOSP self-hosted runner design in SELF_HOSTED_CI.md."
     artifacts:
       - .github/workflows/meta-ci.yml
       - docs/CI_CD.md
+      - docs/SELF_HOSTED_CI.md
   - id: 6
     title: Setup artifact storage and CDN
     category: infrastructure

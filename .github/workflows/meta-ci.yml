@@ -38,6 +38,10 @@ jobs:
           test -f docs/TESTING.md
           test -f docs/DISTRIBUTION.md
           test -f docs/RELEASE_PROCESS.md
+          test -f docs/DOCS_INDEX.md
+          test -f docs/POST_BUILD_OVERLAY.md
+          test -f docs/COST_OPS.md
+          test -f docs/ROADMAP_NOW.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml
