@@ -103,6 +103,9 @@ duplicating long tables.
 | [PQC_ROADMAP.md](PQC_ROADMAP.md) | TRACK C1 |
 | [AI_ALTERNATIVES.md](AI_ALTERNATIVES.md) / [AI_THREAT_MODEL.md](AI_THREAT_MODEL.md) | TRACK C2 |
 | [BRANDING.md](BRANDING.md) | Brand rules |
+| [PRODUCT_PROPERTIES.md](PRODUCT_PROPERTIES.md) | `ro.anaos.*` props |
+| [LOCAL_MANIFEST.md](LOCAL_MANIFEST.md) | `anaos.xml` usage |
+| [AIRGAP_DAY.md](AIRGAP_DAY.md) | Ceremony day one-pager |
 | [FAQ.md](FAQ.md) | FAQ draft |
 
 ## Ops & testing

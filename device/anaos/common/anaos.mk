@@ -14,8 +14,11 @@ PRODUCT_PACKAGES += \
     AnaOSAuditor \
     AnaOSCamera \
     AnaOSAppStore \
-    AnaOSPdfViewer
+    AnaOSPdfViewer \
+    AnaOSSetupWizard
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.anaos.version=dev \
     ro.anaos.brand=Ana
+
+# Property catalog: docs/PRODUCT_PROPERTIES.md

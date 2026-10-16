@@ -1,13 +1,13 @@
 # AnaOS status report
 
-Last updated: 2026-10-16 (~54% emulator compile on Hetzner).
+Last updated: 2026-10-16 (~55% emulator compile on Hetzner).
 
 ## Verdict
 
 Foundation + strategy docs landed. **AOSP sync complete.** First emulator
-build (TASK_018) compiling (~54%); six app scaffold APKs built locally.
-Domains/self-hosted CI/`ROADMAP_NOW` docs added — platform work still blocked
-on `BUILD_OK`. See `docs/ROADMAP_NOW.md`.
+build (TASK_018) compiling (~55%); six app scaffold APKs built locally.
+Product props / local-manifest / air-gap day docs + tighter Track B smoke —
+platform work still blocked on `BUILD_OK`. See `docs/ROADMAP_NOW.md`.
 
 ## Live infra
 

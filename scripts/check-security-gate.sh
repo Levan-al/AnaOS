@@ -14,6 +14,9 @@ need() {
 need "docs/STRATEGY.md"
 need "docs/SECURITY_MERGE_GATE.md"
 need "docs/BRANDING.md"
+need "docs/ROADMAP_NOW.md"
+need "docs/POST_BUILD_OVERLAY.md"
+need "docs/PRODUCT_PROPERTIES.md"
 need "device/anaos/common/official.mk"
 need "device/anaos/common/anaos.mk"
 
@@ -27,8 +30,22 @@ if ! grep -q 'ANAOS_OFFICIAL_BUILD' "$ROOT/device/anaos/common/official.mk"; the
   fail=1
 fi
 
-if grep -R --include='*.md' -E 'test-keys\.pk8|\.pk8' "$ROOT/docs" 2>/dev/null | grep -viE 'never|offline|not |no |\.pk8' >/dev/null; then
-  : # soft: docs may mention .pk8 in "never store" context
+if ! grep -q 'releases.anaos.org' "$ROOT/device/anaos/common/official.mk"; then
+  echo "official.mk must pin releases.anaos.org" >&2
+  fail=1
+fi
+
+# Updater scaffold must not point at GrapheneOS hosts
+UPDATER_EP="$ROOT/apps/Updater/app/src/main/java/org/anaos/updater/UpdateEndpoints.kt"
+if [[ -f "$UPDATER_EP" ]]; then
+  if grep -qiE 'grapheneos\.org|releases\.grapheneos' "$UPDATER_EP"; then
+    echo "Updater endpoints must not use GrapheneOS hosts" >&2
+    fail=1
+  fi
+  if ! grep -q 'releases.anaos.org' "$UPDATER_EP"; then
+    echo "Updater endpoints must include releases.anaos.org" >&2
+    fail=1
+  fi
 fi
 
 if [[ "$fail" -ne 0 ]]; then
