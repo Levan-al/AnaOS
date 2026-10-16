@@ -16,13 +16,14 @@ Until the public PGP key and private tracker are published (TASK_008):
 
 Only official AnaOS builds signed with AnaOS release keys and reporting verified boot state `green` are in scope once releases begin.
 
-## Severity (draft)
+## Severity
 
-| Level | Meaning |
-| --- | --- |
-| Critical | Remote code execution, verified boot bypass, key compromise |
-| High | Local privilege escalation, sandbox escape, persistent compromise |
-| Medium | Significant privacy or integrity impact with constraints |
-| Low | Limited impact, defense-in-depth issues |
+| Level | Meaning | Examples |
+| --- | --- | --- |
+| Critical | Immediate device/user compromise at scale | Remote code execution, verified boot bypass, signing-key compromise |
+| High | Strong local compromise | Privilege escalation, sandbox escape, persistent malware without reboot |
+| Medium | Meaningful privacy/integrity impact with constraints | Network deanonymization defaults broken, scoped-storage bypass |
+| Low | Limited / defense-in-depth | Hardening gaps without practical exploit path |
 
-Exact rewards and scope for a bug bounty are defined in TASK_082.
+Private tracker: GitHub Security Advisories on `Levan-al/AnaOS` (enable when ready) or email above.  
+Bug bounty program: TASK_082 (not launched yet).

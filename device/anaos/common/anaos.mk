@@ -7,6 +7,8 @@ PRODUCT_MANUFACTURER := AnaOS
 # Branding injection
 $(call inherit-product-if-exists, branding/config.mk)
 
+$(call inherit-product-if-exists, device/anaos/common/official.mk)
+
 PRODUCT_PACKAGES += \
     AnaOSUpdater \
     AnaOSAuditor \
@@ -14,7 +16,6 @@ PRODUCT_PACKAGES += \
     AnaOSAppStore \
     AnaOSPdfViewer
 
-# Official builds only talk to AnaOS update endpoints (TASK_016)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.anaos.updater.uri=https://releases.anaos.org/ \
-    ro.anaos.attestation.uri=https://attestation.anaos.org/
+    ro.anaos.version=dev \
+    ro.anaos.brand=Ana

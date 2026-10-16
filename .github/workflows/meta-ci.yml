@@ -1,0 +1,39 @@
+name: meta-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PyYAML
+        run: pip install pyyaml
+      - name: Check required docs exist
+        run: |
+          test -f docs/PLAN.yaml
+          test -f docs/BRANDING.md
+          test -f docs/KEY_CEREMONY.md
+          test -f CONTRIBUTING.md
+          test -f SECURITY.md
+          test -f branding/config.yaml
+          test -f device/anaos/common/anaos.mk
+          test -f device/anaos/common/official.mk
+      - name: Validate branding config
+        run: |
+          python3 - <<'PY'
+          import yaml
+          with open("branding/config.yaml", encoding="utf-8") as f:
+              data = yaml.safe_load(f)
+          assert data["package_prefix"] == "org.anaos", data
+          assert data["project_name"] == "AnaOS", data
+          print("branding/config.yaml OK")
+          PY

@@ -1,24 +1,27 @@
 # AnaOS build host notes
 
-## Current host: homeserver (Qizi-server)
+## Active build host: Hetzner `anaos-build` (rented)
 
-SSH: `ssh Qizi-server` → `levani@100.100.180.34` (Tailscale)
+SSH: `ssh anaos-build` → `root@188.34.189.66` (key `id_ed25519_qizi`)
 
 | Resource | Available | Required (plan) |
 | --- | --- | --- |
-| CPU | 8 cores | ≥16 |
-| RAM | ~8 GB | ≥64 GB |
-| Disk `/` | ~72 GB free | ≥1 TB |
-| Disk `/mnt/wealth-ssd` | ~104 GB free | (extra) |
+| Type | CPX62 (shared) | dedicated preferred |
+| CPU | 16 vCPU | ≥16 |
+| RAM | 32 GB | ≥64 GB (ideal) |
+| Disk | ~575 GB free | ≥1 TB ideal |
 | OS | Ubuntu 24.04 LTS | OK |
+| Credit | $25 prepaid verification credit | monitor burn rate |
 
-**Verdict:** tooling only. Full AOSP/`repo sync` + user build is **not feasible** on this machine (will OOM / fill disk).
+**Notes:**
 
-Prepared on host:
+- New Hetzner accounts block larger **dedicated** types (`ccx43`+ = resource_limit). Request limit increase in Console → Limits for 64GB+ dedicated.
+- Bootstrap installed (`repo`, build packages, ccache). API token name: `AnaOS-build` (revoke after rental ends).
+- **Delete the server when done** so hourly billing stops.
 
-- `~/bin/repo`
-- `~/anaos/HOST_STATUS.md`
-- `/mnt/wealth-ssd/anaos/` (empty workspace mount)
+## Secondary: homeserver (Qizi-server)
+
+SSH: `ssh Qizi-server` → too small for full AOSP (8 GB RAM). Keep for light tooling only.
 
 ## Still needed on host
 

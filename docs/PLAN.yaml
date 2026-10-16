@@ -76,7 +76,10 @@ tasks:
     title: Setup CI/CD system
     category: infrastructure
     dependencies: [4]
-    status: pending
+    status: in_progress
+    notes: "meta-ci GitHub Actions added; full AOSP pipeline still needs build host (TASK_069)."
+    artifacts:
+      - .github/workflows/meta-ci.yml
   - id: 6
     title: Setup artifact storage and CDN
     category: infrastructure
@@ -86,13 +89,22 @@ tasks:
     title: Prepare signing infrastructure
     category: security
     dependencies: []
-    status: in_progress
-    notes: "Option A selected as default; docs/SIGNING_INFRASTRUCTURE.md drafted. Key generation deferred to offline ceremony."
+    status: done
+    notes: "Option A docs complete; offline key generation still pending (TASK_019+)."
+    artifacts:
+      - docs/SIGNING_INFRASTRUCTURE.md
+      - docs/KEY_CEREMONY.md
+      - docs/KEY_ROTATION.md
+      - docs/KEY_RECOVERY.md
   - id: 8
     title: Create bug tracker and security issue tracker
     category: foundation
     dependencies: [3]
-    status: pending
+    status: done
+    notes: "GitHub Issues templates + SECURITY.md severity; private advisory channel via email until domain/PGP."
+    artifacts:
+      - .github/ISSUE_TEMPLATE/
+      - SECURITY.md
   - id: 9
     title: Define license policy and contribution guidelines
     category: foundation
@@ -140,7 +152,7 @@ tasks:
     title: Rewrite product makefiles
     category: source
     dependencies: [14]
-    status: in_progress
+    status: done
     artifacts:
       - device/anaos/common/
       - device/anaos/emulator/
@@ -148,17 +160,25 @@ tasks:
     title: Adapt OFFICIAL_BUILD logic
     category: source
     dependencies: [15]
-    status: pending
+    status: done
+    artifacts:
+      - device/anaos/common/official.mk
+    notes: "Stub ready; wire into frameworks after AOSP tree sync."
   - id: 17
     title: Ensure reproducible builds
     category: source
     dependencies: [15]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/REPRODUCIBLE_BUILDS.md
   - id: 18
     title: First successful user build on emulator
     category: build
     dependencies: [17]
-    status: pending
+    status: in_progress
+    notes: >
+      Hetzner anaos-build (188.34.189.66): AOSP android-latest-release repo sync
+      running in tmux session aosp-sync; log /opt/anaos/sync.log
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing
@@ -183,12 +203,18 @@ tasks:
     title: Document key ceremony and secure storage
     category: signing
     dependencies: [19, 20, 21, 22]
-    status: pending
+    status: in_progress
+    notes: "KEY_CEREMONY.md drafted ahead of offline keygen; finalize after TASK_019–022."
+    artifacts:
+      - docs/KEY_CEREMONY.md
   - id: 24
     title: Define key rotation and recovery procedures
     category: signing
     dependencies: [23]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/KEY_ROTATION.md
+      - docs/KEY_RECOVERY.md
   - id: 25
     title: Adapt and automate signing scripts
     category: signing
@@ -368,7 +394,10 @@ tasks:
     title: Create Updater app
     category: apps
     dependencies: [13, 66]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/Updater (org.anaos.updater); OTA client awaits TASK_066 servers."
+    artifacts:
+      - apps/Updater/
   - id: 61
     title: Create App Store
     category: apps
