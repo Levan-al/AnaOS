@@ -7,17 +7,18 @@ Keep billable idle time low while TASK_018 runs.
 | Control | Location |
 | --- | --- |
 | Build watchdog | tmux `aosp-watchdog` → `/opt/anaos/remote-build-watchdog.sh` |
-| Status file | `/opt/anaos/STATUS.txt` |
-| Build jobs | `ANAOS_BUILD_JOBS=4` (default in `remote-aosp-build.sh`) |
+| After-build | tmux `aosp-after` → `remote-after-build.sh` (waits for BUILD_OK) |
+| Status file | `/opt/anaos/STATUS.txt` / `BRINGUP.txt` |
+| Build jobs | `ANAOS_BUILD_JOBS` (script default 4; host may override) |
 | Swap | 32G `/swapfile` (reduces OOM restarts) |
 | Agent poll | every ~5 minutes while this session watches |
 | Failure triage | `BUILD_FAILURE_PLAYBOOK.md` |
 
 ## After BUILD_OK or hard fail
 
-1. Confirm artifacts / logs needed.  
-2. Optional: `META=...` → `POST_BUILD_OVERLAY.md` then AnaOS lunch rebuild.  
-3. Emulator smoke: `EMULATOR_SMOKE.md`.  
+1. Confirm artifacts / logs needed (`remote-record-bringup.sh`).  
+2. Overlay path: `aosp-after` or `POST_BUILD_OVERLAY.md`.  
+3. Emulator smoke: `EMULATOR_SMOKE.md` + `verify-anaos-props.sh`.  
 4. **Delete** `anaos-build` in Hetzner Console (or snapshot then delete).  
 5. Revoke API token `AnaOS-build` when rental ends (`BUILD_HOST.md`).  
 

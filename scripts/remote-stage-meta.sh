@@ -13,8 +13,8 @@ mkdir -p /opt/anaos
 if [[ -d "$META/.git" ]]; then
   echo "[stage-meta] updating $META"
   git -C "$META" fetch --depth 1 origin "$BRANCH"
-  git -C "$META" checkout "$BRANCH"
-  git -C "$META" pull --ff-only origin "$BRANCH" || git -C "$META" reset --hard "origin/$BRANCH"
+  git -C "$META" checkout -B "$BRANCH" "origin/$BRANCH"
+  git -C "$META" reset --hard "origin/$BRANCH"
 else
   echo "[stage-meta] cloning $REPO_URL → $META"
   rm -rf "$META"
@@ -24,12 +24,13 @@ fi
 test -d "$META/device/anaos" || { echo "missing device/anaos in $META" >&2; exit 1; }
 test -d "$META/branding" || { echo "missing branding in $META" >&2; exit 1; }
 
-# Keep post-build helper in sync
-if [[ -f "$META/scripts/post-build-overlay.sh" ]]; then
-  cp -f "$META/scripts/post-build-overlay.sh" /opt/anaos/post-build-overlay.sh
-  cp -f "$META/scripts/overlay-anaos-into-aosp.sh" /opt/anaos/overlay-anaos-into-aosp.sh
-  chmod +x /opt/anaos/post-build-overlay.sh /opt/anaos/overlay-anaos-into-aosp.sh
-fi
+# Keep host helpers in sync with meta
+for f in post-build-overlay.sh overlay-anaos-into-aosp.sh remote-after-build.sh remote-stage-meta.sh; do
+  if [[ -f "$META/scripts/$f" ]]; then
+    cp -f "$META/scripts/$f" "/opt/anaos/$f"
+    chmod +x "/opt/anaos/$f"
+  fi
+done
 
 date -u +%Y-%m-%dT%H:%M:%SZ > /opt/anaos/META_OK
-echo "[stage-meta] META_OK → $META (export META=$META for overlay)"
+echo "[stage-meta] META_OK → $META @ $(git -C "$META" rev-parse --short HEAD)"

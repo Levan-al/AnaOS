@@ -58,14 +58,16 @@ See `docs/REPRODUCIBLE_BUILDS.md` and `docs/REPRODUCIBLE_VERIFY.md`.
 # After SYNC_OK — overlay AnaOS product trees into the AOSP checkout:
 #   ./scripts/overlay-anaos-into-aosp.sh /opt/anaos/aosp
 source build/envsetup.sh
-lunch sdk_phone64_x86_64-trunk_staging-user   # see remote-aosp-build.sh fallbacks
+lunch sdk_phone64_x86_64-trunk_staging-user   # Hetzner bring-up chose this
 # When device/anaos is overlaid:
 # lunch anaos_emulator-userdebug
-m -j4
+m -j4   # or ANAOS_BUILD_JOBS; host may use -j8 with swap
 ```
 
-Success marker: `/opt/anaos/BUILD_OK`. Then run `scripts/post-build-overlay.sh`
-(or overlay path documented there) before claiming AnaOS product lunch targets.
+Success marker: `/opt/anaos/BUILD_OK`. Prefer tmux `aosp-after` /
+`scripts/remote-after-build.sh` (see `POST_BUILD_OVERLAY.md`).
+
+Bring-up snapshot: `scripts/remote-record-bringup.sh` → `/opt/anaos/BRINGUP.txt`.
 
 Verify branding strings / fingerprint contain `AnaOS` / `Ana` / `org.anaos`.
 
