@@ -103,7 +103,10 @@ tasks:
     title: Setup artifact storage and CDN
     category: infrastructure
     dependencies: [2]
-    status: pending
+    status: in_progress
+    notes: "Architecture draft; hosting blocked on TASK_002 domains."
+    artifacts:
+      - docs/ARTIFACT_CDN.md
   - id: 7
     title: Prepare signing infrastructure
     category: security
@@ -326,28 +329,38 @@ tasks:
     title: Integrate kernel hardening patches
     category: kernel
     dependencies: [34]
-    status: pending
-    notes: "Blocked on TASK_034 repo pins."
+    status: in_progress
+    notes: "Checklist in KERNEL.md; blocked on repo pins."
+    artifacts:
+      - docs/KERNEL.md
   - id: 36
     title: Enable Memory Tagging Extension (MTE)
     category: kernel
     dependencies: [35]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/KERNEL.md
   - id: 37
     title: Implement USB-C port control and hardware kill-switches
     category: kernel
     dependencies: [35]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/KERNEL.md
   - id: 38
     title: Implement firmware verified loading pipeline
     category: kernel
     dependencies: [35]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/KERNEL.md
   - id: 39
     title: Create automatic kernel prebuilts build system
     category: kernel
     dependencies: [34]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/KERNEL.md
   - id: 40
     title: Full hardened_malloc integration
     category: memory_safety
@@ -375,12 +388,16 @@ tasks:
     title: Enable integer overflow and bounds checking
     category: memory_safety
     dependencies: [11]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/MEMORY_SAFETY.md
   - id: 44
     title: Restrict dynamic code loading and exec-spawning
     category: memory_safety
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/MEMORY_SAFETY.md
   - id: 45
     title: Maximum SELinux policy hardening
     category: isolation
@@ -523,7 +540,9 @@ tasks:
     title: Harden Messaging, Dialer, Contacts, Gallery
     category: apps
     dependencies: [13, 45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/AOSP_APPS_HARDENING.md
   - id: 64
     title: Create encrypted backup system
     category: apps
@@ -550,32 +569,44 @@ tasks:
     title: Support delta updates
     category: distribution
     dependencies: [66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 68
     title: Implement staged rollout mechanism
     category: distribution
     dependencies: [66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 69
     title: Automatic factory images and OTA generation pipeline
     category: distribution
     dependencies: [25, 66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 70
     title: Create WebUSB installer
     category: distribution
     dependencies: [66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 71
     title: Create CLI installer and documentation
     category: distribution
     dependencies: [66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 72
     title: Ensure rollback protection
     category: distribution
     dependencies: [66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/DISTRIBUTION.md
   - id: 73
     title: Create remote attestation server
     category: attestation
@@ -598,37 +629,52 @@ tasks:
     title: Integrate CTS + VTS
     category: testing
     dependencies: [31]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 77
     title: Create own security regression test suite
     category: testing
     dependencies: [45, 40, 41]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 78
     title: Setup continuous fuzzing system
     category: testing
     dependencies: [34, 11]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 79
     title: Automate boot, update and verified boot flow testing
     category: testing
     dependencies: [31, 66]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 80
     title: Automate hardware-backed attestation tests
     category: testing
     dependencies: [75]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 81
     title: Define external security audit process
     category: testing
     dependencies: [8]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/TESTING.md
   - id: 82
     title: Launch bug bounty program
     category: testing
     dependencies: [8]
-    status: pending
+    status: in_progress
+    notes: "Process outlined; launch after public release channel."
+    artifacts:
+      - docs/TESTING.md
   - id: 83
     title: Write complete build documentation
     category: documentation
@@ -651,17 +697,27 @@ tasks:
     title: Write contribution guidelines
     category: documentation
     dependencies: [9]
-    status: pending
+    status: done
+    artifacts:
+      - CONTRIBUTING.md
+      - CODE_OF_CONDUCT.md
   - id: 87
     title: Write reproducible builds verification guide
     category: documentation
     dependencies: [17]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/REPRODUCIBLE_VERIFY.md
+      - docs/REPRODUCIBLE_BUILDS.md
   - id: 88
     title: Write key ceremony and release process documentation
     category: documentation
     dependencies: [23, 24]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/RELEASE_PROCESS.md
+      - docs/KEY_CEREMONY.md
+      - docs/KEY_CEREMONY_CHECKLIST.md
   - id: 89
     title: Create official website and user documentation
     category: documentation
@@ -671,22 +727,32 @@ tasks:
     title: Automate monthly security patch pipeline
     category: longterm
     dependencies: [69, 77]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/LONGTERM_OPS.md
   - id: 91
     title: Standardize new Android version porting process
     category: longterm
     dependencies: [90]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/LONGTERM_OPS.md
+      - docs/AOSP17_ADAPTATION.md
   - id: 92
     title: Define new hardware generation support process
     category: longterm
     dependencies: [33]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/LONGTERM_OPS.md
   - id: 93
     title: Setup community and enterprise support channels
     category: longterm
     dependencies: [89]
-    status: pending
+    status: in_progress
+    notes: "Draft in LONGTERM_OPS; blocked on public site/domains."
+    artifacts:
+      - docs/LONGTERM_OPS.md
 
   # --- Parallel strategy tracks (v2.1) — see docs/STRATEGY.md ---
   - id: 94

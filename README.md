@@ -37,6 +37,9 @@ Copyright (C) The AnaOS Project
 | SELinux hardening | [`docs/SELINUX_HARDENING.md`](docs/SELINUX_HARDENING.md) |
 | Privacy controls | [`docs/PRIVACY_CONTROLS.md`](docs/PRIVACY_CONTROLS.md) |
 | Security architecture | [`docs/SECURITY_ARCHITECTURE.md`](docs/SECURITY_ARCHITECTURE.md) |
+| Testing | [`docs/TESTING.md`](docs/TESTING.md) |
+| Distribution | [`docs/DISTRIBUTION.md`](docs/DISTRIBUTION.md) |
+| Release process | [`docs/RELEASE_PROCESS.md`](docs/RELEASE_PROCESS.md) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |
 | AOSP 17 tag shortlist | [`docs/AOSP17_TAG_SHORTLIST.md`](docs/AOSP17_TAG_SHORTLIST.md) |
 | PQC roadmap | [`docs/PQC_ROADMAP.md`](docs/PQC_ROADMAP.md) |

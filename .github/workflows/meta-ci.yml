@@ -35,6 +35,9 @@ jobs:
           test -f docs/PRIVACY_CONTROLS.md
           test -f docs/SECURITY_ARCHITECTURE.md
           test -f docs/ATTESTATION_SERVER.md
+          test -f docs/TESTING.md
+          test -f docs/DISTRIBUTION.md
+          test -f docs/RELEASE_PROCESS.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml
