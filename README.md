@@ -28,6 +28,7 @@ Full index: [`docs/DOCS_INDEX.md`](docs/DOCS_INDEX.md).
 | Strategy (A/B/C) | [`docs/STRATEGY.md`](docs/STRATEGY.md) |
 | Security merge gate (B) | [`docs/SECURITY_MERGE_GATE.md`](docs/SECURITY_MERGE_GATE.md) |
 | Key ceremony checklist | [`docs/KEY_CEREMONY_CHECKLIST.md`](docs/KEY_CEREMONY_CHECKLIST.md) |
+| Air-gap practical runbook | [`docs/AIRGAP_PRACTICAL.md`](docs/AIRGAP_PRACTICAL.md) |
 | Branding | [`docs/BRANDING.md`](docs/BRANDING.md) |
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | Status report | [`docs/STATUS_REPORT.md`](docs/STATUS_REPORT.md) |

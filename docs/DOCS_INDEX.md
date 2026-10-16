@@ -106,6 +106,7 @@ duplicating long tables.
 | [PRODUCT_PROPERTIES.md](PRODUCT_PROPERTIES.md) | `ro.anaos.*` props |
 | [LOCAL_MANIFEST.md](LOCAL_MANIFEST.md) | `anaos.xml` usage |
 | [AIRGAP_DAY.md](AIRGAP_DAY.md) | Ceremony day one-pager |
+| [AIRGAP_PRACTICAL.md](AIRGAP_PRACTICAL.md) | Practical air-gap runbook |
 | [FAQ.md](FAQ.md) | FAQ draft |
 
 ## Ops & testing

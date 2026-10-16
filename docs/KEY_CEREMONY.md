@@ -29,7 +29,9 @@ This document never contains private key material.
 
 ## Ceremony steps (summary)
 
-Printable checklist: **`docs/KEY_CEREMONY_CHECKLIST.md`**.
+- One-pager: **`docs/AIRGAP_DAY.md`**  
+- Paper boxes: **`docs/KEY_CEREMONY_CHECKLIST.md`**  
+- Practical runbook (kit, timeline, commands): **`docs/AIRGAP_PRACTICAL.md`**  
 
 1. Boot offline machine from known-good media  
 2. Verify tooling hashes (`development/tools/make_key`, `openssl`, `avbtool`)  

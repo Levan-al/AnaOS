@@ -3,7 +3,10 @@
 Print this page. Check boxes **on paper** during the ceremony.  
 Never run these steps on Hetzner, CI, or a networked daily laptop.
 
-Related: `KEY_CEREMONY.md`, `APP_SIGNING.md`, `KEY_RECOVERY.md`, `script/make_anaos_*.sh`.
+**Practical timeline + kit list:** `AIRGAP_PRACTICAL.md` (use that as the day script).
+
+Related: `KEY_CEREMONY.md`, `AIRGAP_DAY.md`, `APP_SIGNING.md`, `KEY_RECOVERY.md`,
+`script/make_anaos_*.sh`.
 
 ## Before (day −1)
 

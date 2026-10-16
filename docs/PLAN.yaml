@@ -242,10 +242,12 @@ tasks:
     category: signing
     dependencies: [19, 20, 21, 22]
     status: in_progress
-    notes: "Checklist ready for air-gap run; fingerprints after offline keygen."
+    notes: "Practical air-gap runbook landed; fingerprints after offline keygen."
     artifacts:
       - docs/KEY_CEREMONY.md
       - docs/KEY_CEREMONY_CHECKLIST.md
+      - docs/AIRGAP_DAY.md
+      - docs/AIRGAP_PRACTICAL.md
       - docs/APP_SIGNING.md
       - scripts/record-public-key-fingerprints.sh
   - id: 24
