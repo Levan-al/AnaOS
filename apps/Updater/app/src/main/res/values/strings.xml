@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AnaOS Updater</string>
+    <string name="updater_title">AnaOS Updater</string>
+    <string name="updater_status_scaffold">Scaffold build. Host: %1$s · channel: %2$s\nNo third-party update servers.</string>
+</resources>

@@ -154,7 +154,7 @@ tasks:
     status: done
     notes: >
       Forked Vanadium/AppStore/Auditor/Camera/PdfViewer/Info and grapheneos_* aliases
-      for name conflicts with AnaOS stubs. Branding replacement (org.anaos) still TBD.
+      for name conflicts with AnaOS stubs. Rebrand checklist: docs/ORG_ANAOS_REBRAND.md.
   - id: 13
     title: Create own repositories
     category: source
@@ -449,7 +449,9 @@ tasks:
     category: apps
     dependencies: [13, 66]
     status: in_progress
-    notes: "Scaffold at apps/Updater (org.anaos.updater); OTA client awaits TASK_066 servers."
+    notes: >
+      Scaffold expanded: channels, endpoints, NoOp repository, boot receiver.
+      Real OTA client awaits TASK_066 servers + signing.
     artifacts:
       - apps/Updater/
   - id: 61
