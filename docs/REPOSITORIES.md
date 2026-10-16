@@ -2,10 +2,11 @@
 
 ## Organization
 
-Create organization **AnaOS** on one of:
+**Decision:** GitHub (public OSS + Actions).
 
-1. GitHub (free for public OSS) — recommended for discoverability + Actions
-2. Self-hosted Forgejo / Gitea — if full self-hosting is preferred
+Create organization **AnaOS** at https://github.com/organizations/plan (requires a logged-in GitHub account).
+
+Scope: Android hardened OS only. AI Ops landing at qizimarket.com/anaos is unrelated (see `PRODUCT_SCOPE.md`).
 
 ## Required repositories
 

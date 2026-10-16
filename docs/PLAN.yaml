@@ -53,12 +53,13 @@ tasks:
     category: foundation
     dependencies: [1]
     status: blocked
-    blocked_reason: Requires human registrar account and payment method
+    blocked_reason: Deferred — not required for early Android source work; anaos.org later
   - id: 3
     title: Create source control organization
     category: foundation
     dependencies: [1]
-    status: pending
+    status: in_progress
+    notes: "GitHub chosen. AI Ops Ana OS stays at qizimarket.com/anaos; this repo is Android OS only."
   - id: 4
     title: Setup build farm
     category: infrastructure

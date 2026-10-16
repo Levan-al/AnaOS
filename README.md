@@ -2,9 +2,11 @@
 
 Hardened Android OS project. Brand: **Ana**. Package prefix: `org.anaos`.
 
+> **Scope:** This is the Android OS. The AI Ops product at [qizimarket.com/anaos](https://qizimarket.com/anaos/) is separate — see [`docs/PRODUCT_SCOPE.md`](docs/PRODUCT_SCOPE.md).
+
 ## Status
 
-Foundation in progress. See [`docs/PLAN.yaml`](docs/PLAN.yaml) for the machine-readable task plan (v2.0) and [`docs/BRANDING.md`](docs/BRANDING.md) for identity.
+Foundation in progress. Hosting target: **GitHub** organization `AnaOS`. See [`docs/PLAN.yaml`](docs/PLAN.yaml) and [`docs/BRANDING.md`](docs/BRANDING.md).
 
 ## Licensing
 
