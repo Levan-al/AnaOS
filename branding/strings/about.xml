@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AnaOS about / legal string overrides (TASK_001 / TASK_014) -->
+<resources>
+    <string name="anaos_os_name">AnaOS</string>
+    <string name="anaos_brand">Ana</string>
+    <string name="anaos_manufacturer">AnaOS</string>
+    <string name="anaos_copyright">Copyright (C) The AnaOS Project</string>
+</resources>

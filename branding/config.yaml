@@ -1,0 +1,34 @@
+# AnaOS branding injection source of truth (TASK_001 / TASK_014)
+project_name: AnaOS
+short_name: Ana
+brand: Ana
+manufacturer: AnaOS
+package_prefix: org.anaos
+copyright: "Copyright (C) The AnaOS Project"
+primary_license: Apache-2.0
+secondary_license: GPLv2
+build_fingerprint_template: "AnaOS/<product>/<device>:<android_version>/<build_id>/<build_number>:user/release-keys"
+
+about:
+  os_name: AnaOS
+  legal: "Copyright (C) The AnaOS Project"
+
+product_defaults:
+  PRODUCT_BRAND: Ana
+  PRODUCT_MANUFACTURER: AnaOS
+
+domains:
+  primary: anaos.org
+  releases: releases.anaos.org
+  attestation: attestation.anaos.org
+  downloads: dl.anaos.org
+  apps: apps.anaos.org
+
+apps:
+  camera: org.anaos.camera
+  updater: org.anaos.updater
+  auditor: org.anaos.auditor
+  appstore: org.anaos.appstore
+  pdfviewer: org.anaos.pdfviewer
+  setupwizard: org.anaos.setupwizard
+  browser: org.anaos.browser

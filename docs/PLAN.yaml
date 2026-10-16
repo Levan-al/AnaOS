@@ -1,0 +1,513 @@
+# AnaOS Machine-Readable Project Plan (Optimized v2.0)
+# Canonical working copy of the execution plan.
+
+metadata:
+  project_name: AnaOS
+  short_name: Ana
+  package_prefix: org.anaos
+  manufacturer: AnaOS
+  brand: Ana
+  build_fingerprint_template: "AnaOS/<product>/<device>:<android_version>/<build_id>/<build_number>:user/release-keys"
+  copyright: "Copyright (C) The AnaOS Project"
+  primary_license: Apache-2.0
+  secondary_license: GPLv2
+  version: "2.0"
+  format: machine-readable
+  language: en
+
+execution_rules:
+  strict_order: true
+  skip_forbidden: true
+  private_keys_offline: true
+  all_production_builds_must_be_signed: true
+  verified_boot_state_required: green
+  bootloader_must_be_lockable: true
+  branding_must_use: ["AnaOS", "Ana", "org.anaos"]
+  reproducible_builds_mandatory: true
+  zero_cost_infrastructure: true
+  free_tier_preferred: true
+  self_hosted_when_needed: true
+  security_features_non_negotiable:
+    - hardened_malloc
+    - CFI
+    - SELinux enforcing
+    - verified boot
+    - rollback protection
+
+# Status values: pending | in_progress | blocked | done | skipped
+# blocked_reason required when status=blocked
+
+tasks:
+  - id: 1
+    title: Define official name, package prefix and branding
+    category: foundation
+    dependencies: []
+    status: done
+    artifacts:
+      - docs/BRANDING.md
+      - branding/config.yaml
+      - branding/config.mk
+      - branding/strings/about.xml
+  - id: 2
+    title: Register domains
+    category: foundation
+    dependencies: [1]
+    status: blocked
+    blocked_reason: Requires human registrar account and payment method
+  - id: 3
+    title: Create source control organization
+    category: foundation
+    dependencies: [1]
+    status: pending
+  - id: 4
+    title: Setup build farm
+    category: infrastructure
+    dependencies: []
+    status: blocked
+    blocked_reason: Requires provisioned hardware or cloud VMs
+  - id: 5
+    title: Setup CI/CD system
+    category: infrastructure
+    dependencies: [4]
+    status: pending
+  - id: 6
+    title: Setup artifact storage and CDN
+    category: infrastructure
+    dependencies: [2]
+    status: pending
+  - id: 7
+    title: Prepare signing infrastructure
+    category: security
+    dependencies: []
+    status: in_progress
+    notes: "Option A selected as default; docs/SIGNING_INFRASTRUCTURE.md drafted. Key generation deferred to offline ceremony."
+  - id: 8
+    title: Create bug tracker and security issue tracker
+    category: foundation
+    dependencies: [3]
+    status: pending
+  - id: 9
+    title: Define license policy and contribution guidelines
+    category: foundation
+    dependencies: [3]
+    status: pending
+  - id: 10
+    title: Create platform_manifest
+    category: source
+    dependencies: [3]
+    status: pending
+  - id: 11
+    title: Fork critical AOSP and GrapheneOS repositories
+    category: source
+    dependencies: [10]
+    status: pending
+  - id: 12
+    title: Fork GrapheneOS unique repositories
+    category: source
+    dependencies: [10]
+    status: pending
+  - id: 13
+    title: Create own repositories
+    category: source
+    dependencies: [3]
+    status: pending
+  - id: 14
+    title: Create branding injection system
+    category: source
+    dependencies: [13]
+    status: pending
+  - id: 15
+    title: Rewrite product makefiles
+    category: source
+    dependencies: [14]
+    status: pending
+  - id: 16
+    title: Adapt OFFICIAL_BUILD logic
+    category: source
+    dependencies: [15]
+    status: pending
+  - id: 17
+    title: Ensure reproducible builds
+    category: source
+    dependencies: [15]
+    status: pending
+  - id: 18
+    title: First successful user build on emulator
+    category: build
+    dependencies: [17]
+    status: pending
+  - id: 19
+    title: Generate platform, media, shared, releasekey
+    category: signing
+    dependencies: [7]
+    status: pending
+  - id: 20
+    title: Generate AVB keys
+    category: signing
+    dependencies: [7]
+    status: pending
+  - id: 21
+    title: Generate OTA signing keys
+    category: signing
+    dependencies: [7]
+    status: pending
+  - id: 22
+    title: Generate app signing keys
+    category: signing
+    dependencies: [7]
+    status: pending
+  - id: 23
+    title: Document key ceremony and secure storage
+    category: signing
+    dependencies: [19, 20, 21, 22]
+    status: pending
+  - id: 24
+    title: Define key rotation and recovery procedures
+    category: signing
+    dependencies: [23]
+    status: pending
+  - id: 25
+    title: Adapt and automate signing scripts
+    category: signing
+    dependencies: [19, 20, 21, 22]
+    status: pending
+  - id: 26
+    title: Produce first fully signed factory image
+    category: signing
+    dependencies: [25, 18]
+    status: pending
+  - id: 27
+    title: Create adevtool equivalent
+    category: device
+    dependencies: [13]
+    status: pending
+  - id: 28
+    title: Integrate first official device
+    category: device
+    dependencies: [27, 15]
+    status: pending
+  - id: 29
+    title: Automate vendor files extraction
+    category: device
+    dependencies: [27]
+    status: pending
+  - id: 30
+    title: Add device-specific sepolicy and init scripts
+    category: device
+    dependencies: [28]
+    status: pending
+  - id: 31
+    title: First successful user build on real device + verified boot
+    category: device
+    dependencies: [30, 26]
+    status: pending
+  - id: 32
+    title: Verify bootloader locking with custom AVB public key
+    category: device
+    dependencies: [31, 20]
+    status: pending
+  - id: 33
+    title: Write device porting documentation
+    category: documentation
+    dependencies: [32]
+    status: pending
+  - id: 34
+    title: Create own kernel trees
+    category: kernel
+    dependencies: [10]
+    status: pending
+  - id: 35
+    title: Integrate kernel hardening patches
+    category: kernel
+    dependencies: [34]
+    status: pending
+  - id: 36
+    title: Enable Memory Tagging Extension (MTE)
+    category: kernel
+    dependencies: [35]
+    status: pending
+  - id: 37
+    title: Implement USB-C port control and hardware kill-switches
+    category: kernel
+    dependencies: [35]
+    status: pending
+  - id: 38
+    title: Implement firmware verified loading pipeline
+    category: kernel
+    dependencies: [35]
+    status: pending
+  - id: 39
+    title: Create automatic kernel prebuilts build system
+    category: kernel
+    dependencies: [34]
+    status: pending
+  - id: 40
+    title: Full hardened_malloc integration
+    category: memory_safety
+    dependencies: [11, 12]
+    status: pending
+  - id: 41
+    title: Enable Control Flow Integrity (CFI)
+    category: memory_safety
+    dependencies: [11]
+    status: pending
+  - id: 42
+    title: Enable Shadow Call Stack / Pointer Authentication
+    category: memory_safety
+    dependencies: [41]
+    status: pending
+  - id: 43
+    title: Enable integer overflow and bounds checking
+    category: memory_safety
+    dependencies: [11]
+    status: pending
+  - id: 44
+    title: Restrict dynamic code loading and exec-spawning
+    category: memory_safety
+    dependencies: [45]
+    status: pending
+  - id: 45
+    title: Maximum SELinux policy hardening
+    category: isolation
+    dependencies: [11]
+    status: pending
+  - id: 46
+    title: Deepen storage isolation / scoped storage
+    category: isolation
+    dependencies: [45]
+    status: pending
+  - id: 47
+    title: Granular network permission control
+    category: isolation
+    dependencies: [45]
+    status: pending
+  - id: 48
+    title: Sensors, clipboard, contacts, notifications isolation
+    category: isolation
+    dependencies: [45]
+    status: pending
+  - id: 49
+    title: Improve profile-based isolation
+    category: isolation
+    dependencies: [45]
+    status: pending
+  - id: 50
+    title: Sandboxed Google Play compatibility layer
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 51
+    title: Own Network Location implementation
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 52
+    title: Improved MAC address randomization
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 53
+    title: DNS-over-HTTPS / DNS-over-TLS by default
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 54
+    title: Metadata stripping system
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 55
+    title: Permission auto-reset and idle app hibernation
+    category: privacy
+    dependencies: [45]
+    status: pending
+  - id: 56
+    title: Create Camera app
+    category: apps
+    dependencies: [13, 45]
+    status: pending
+  - id: 57
+    title: Create Browser + WebView (Vanadium equivalent)
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 58
+    title: Create PDF Viewer
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 59
+    title: Create Auditor app
+    category: apps
+    dependencies: [13, 73]
+    status: pending
+  - id: 60
+    title: Create Updater app
+    category: apps
+    dependencies: [13, 66]
+    status: pending
+  - id: 61
+    title: Create App Store
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 62
+    title: Redesign Setup Wizard
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 63
+    title: Harden Messaging, Dialer, Contacts, Gallery
+    category: apps
+    dependencies: [13, 45]
+    status: pending
+  - id: 64
+    title: Create encrypted backup system
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 65
+    title: Create ExactCalculator and minimal utilities
+    category: apps
+    dependencies: [13]
+    status: pending
+  - id: 66
+    title: Create own update server architecture
+    category: distribution
+    dependencies: [2, 6]
+    status: pending
+  - id: 67
+    title: Support delta updates
+    category: distribution
+    dependencies: [66]
+    status: pending
+  - id: 68
+    title: Implement staged rollout mechanism
+    category: distribution
+    dependencies: [66]
+    status: pending
+  - id: 69
+    title: Automatic factory images and OTA generation pipeline
+    category: distribution
+    dependencies: [25, 66]
+    status: pending
+  - id: 70
+    title: Create WebUSB installer
+    category: distribution
+    dependencies: [66]
+    status: pending
+  - id: 71
+    title: Create CLI installer and documentation
+    category: distribution
+    dependencies: [66]
+    status: pending
+  - id: 72
+    title: Ensure rollback protection
+    category: distribution
+    dependencies: [66]
+    status: pending
+  - id: 73
+    title: Create remote attestation server
+    category: attestation
+    dependencies: [2, 6]
+    status: pending
+  - id: 74
+    title: Full Auditor app integration
+    category: attestation
+    dependencies: [59, 73]
+    status: pending
+  - id: 75
+    title: Hardware-backed attestation testing and validation
+    category: attestation
+    dependencies: [74]
+    status: pending
+  - id: 76
+    title: Integrate CTS + VTS
+    category: testing
+    dependencies: [31]
+    status: pending
+  - id: 77
+    title: Create own security regression test suite
+    category: testing
+    dependencies: [45, 40, 41]
+    status: pending
+  - id: 78
+    title: Setup continuous fuzzing system
+    category: testing
+    dependencies: [34, 11]
+    status: pending
+  - id: 79
+    title: Automate boot, update and verified boot flow testing
+    category: testing
+    dependencies: [31, 66]
+    status: pending
+  - id: 80
+    title: Automate hardware-backed attestation tests
+    category: testing
+    dependencies: [75]
+    status: pending
+  - id: 81
+    title: Define external security audit process
+    category: testing
+    dependencies: [8]
+    status: pending
+  - id: 82
+    title: Launch bug bounty program
+    category: testing
+    dependencies: [8]
+    status: pending
+  - id: 83
+    title: Write complete build documentation
+    category: documentation
+    dependencies: [18, 26]
+    status: pending
+  - id: 84
+    title: Write device porting guide
+    category: documentation
+    dependencies: [33]
+    status: pending
+  - id: 85
+    title: Write security architecture documentation
+    category: documentation
+    dependencies: [45, 40, 41, 73]
+    status: pending
+  - id: 86
+    title: Write contribution guidelines
+    category: documentation
+    dependencies: [9]
+    status: pending
+  - id: 87
+    title: Write reproducible builds verification guide
+    category: documentation
+    dependencies: [17]
+    status: pending
+  - id: 88
+    title: Write key ceremony and release process documentation
+    category: documentation
+    dependencies: [23, 24]
+    status: pending
+  - id: 89
+    title: Create official website and user documentation
+    category: documentation
+    dependencies: [2]
+    status: pending
+  - id: 90
+    title: Automate monthly security patch pipeline
+    category: longterm
+    dependencies: [69, 77]
+    status: pending
+  - id: 91
+    title: Standardize new Android version porting process
+    category: longterm
+    dependencies: [90]
+    status: pending
+  - id: 92
+    title: Define new hardware generation support process
+    category: longterm
+    dependencies: [33]
+    status: pending
+  - id: 93
+    title: Setup community and enterprise support channels
+    category: longterm
+    dependencies: [89]
+    status: pending

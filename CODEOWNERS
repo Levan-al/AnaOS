@@ -1,0 +1,7 @@
+# Default owners — replace @AnaOS/core with real teams after org creation (TASK_003)
+*       @AnaOS/core
+
+/branding/              @AnaOS/core
+/docs/                  @AnaOS/core
+/SECURITY.md            @AnaOS/security
+/docs/SIGNING_INFRASTRUCTURE.md  @AnaOS/security

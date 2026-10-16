@@ -1,0 +1,28 @@
+# Build / sync
+/.repo/
+/out/
+/.ccache/
+*.pyc
+__pycache__/
+
+# Secrets — never commit
+*.pk8
+*.pem
+!**/test/**/*.pem
+keystore/
+keys/
+*.jks
+*.keystore
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local vendor blobs
+/vendor/google/
+/vendor/anaos/*/proprietary/
