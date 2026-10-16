@@ -26,6 +26,7 @@ jobs:
           test -f docs/SECURITY_MERGE_GATE.md
           test -f docs/KEY_CEREMONY_CHECKLIST.md
           test -f docs/AOSP17_TAG_SHORTLIST.md
+          test -f docs/STATUS_REPORT.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml

@@ -1,0 +1,8 @@
+# Default reviewers for AnaOS meta (adjust as maintainers grow)
+*       @Levan-al
+
+/docs/STRATEGY.md              @Levan-al
+/docs/SECURITY_MERGE_GATE.md   @Levan-al
+/docs/KEY_*.md                 @Levan-al
+/script/                       @Levan-al
+/device/anaos/                 @Levan-al

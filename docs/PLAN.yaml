@@ -198,9 +198,9 @@ tasks:
     dependencies: [17]
     status: in_progress
     notes: >
-      Hetzner anaos-build (188.34.189.66): AOSP android-latest-release repo sync
-      still running (~67GB tree, tmux aosp-sync); SYNC_OK not yet written.
-      Transient checkout errors seen for ltp/mbedtls/enum34 — monitor end of sync.
+      Hetzner anaos-build: android-latest-release sync still running (~146GB,
+      2026-10-16); SYNC_OK not yet. Repair script ready for ltp/mbedtls/enum34.
+      Post-sync: scripts/overlay-anaos-into-aosp.sh then lunch/build.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing

@@ -34,7 +34,7 @@ See `docs/REPRODUCIBLE_BUILDS.md`.
 
 ```bash
 # After SYNC_OK — overlay AnaOS product trees into the AOSP checkout:
-#   rsync device/anaos branding → $AOSP/
+#   ./scripts/overlay-anaos-into-aosp.sh /opt/anaos/aosp
 source build/envsetup.sh
 lunch sdk_phone64_x86_64-user   # or listed fallbacks in remote-aosp-build.sh
 # When device/anaos is overlaid:
