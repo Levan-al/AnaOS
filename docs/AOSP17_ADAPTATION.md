@@ -35,11 +35,9 @@ Release branch name: `anaos-aosp17` (promoted pins only).
 | B gate | Complete `SECURITY_MERGE_GATE.md` checklist |
 | Promote | Update release pin (`scripts/release-env.sh` / manifest) after B sign-off |
 
-## Conflict ledger (start empty)
+## Conflict ledger
 
-| Upstream area | Conflict | Resolution | Track B impact |
-| --- | --- | --- | --- |
-| _(fill during first 17 rebase)_ | | | |
+Canonical table: **`docs/AOSP17_REBASE_LEDGER.md`** (TASK_096).
 
 ## Relation to current sync
 

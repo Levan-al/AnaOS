@@ -11,4 +11,8 @@ data class UpdateMetadata(
     val downloadUrl: String,
     val sha256: String,
     val minBuildNumber: String? = null,
+    /** Classical signature blob (hex/base64 TBD with server schema). */
+    val classicalSignature: String? = null,
+    /** Optional PQ signature for hybrid verify (TASK_100). */
+    val pqSignature: String? = null,
 )

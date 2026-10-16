@@ -13,9 +13,9 @@ Forward-looking crypto for AnaOS without breaking today’s verified boot / OTA.
 
 | Phase | Scope | Status |
 | --- | --- | --- |
-| P0 | Inventory: OTA, APK, AVB, TLS touchpoints | in_progress (this doc) |
-| P1 | Design hybrid OTA / release metadata signatures | pending |
-| P2 | Prototype verify path in Updater (`org.anaos.updater`) | pending |
+| P0 | Inventory: OTA, APK, AVB, TLS touchpoints | done (this doc) |
+| P1 | Design hybrid OTA / release metadata signatures | in_progress (metadata fields) |
+| P2 | Prototype verify path in Updater (`org.anaos.updater`) | in_progress (scaffold interfaces) |
 | P3 | Document PQ options in key ceremony | pending |
 | P4 | Optional system TLS hybrid KEM where BoringSSL/AOSP allows | pending |
 

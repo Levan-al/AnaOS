@@ -10,6 +10,8 @@ Scaffold for TASK_060. Points **only** at AnaOS update servers.
 | `UpdateChannel` | `stable` / `beta` |
 | `UpdateMetadata` | Future server JSON shape |
 | `UpdateRepository` | Fetch contract; `NoOpUpdateRepository` (no network) |
+| `UpdateSignatureVerifier` | Classical / hybrid PQ verify contract + NoOp stub |
+| `HybridPqSignatureVerifier` | TASK_100 prototype shape (not production-ready) |
 | `BootCompletedReceiver` | Boot hook stub |
 | `network_security_config.xml` | Cleartext denied; AnaOS domains only |
 

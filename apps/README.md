@@ -13,6 +13,7 @@ Development scaffolds under `org.anaos.*`. Platform merge targets are
 | [SetupWizard](SetupWizard/) | `org.anaos.setupwizard` | scaffold |
 | [Browser](Browser/) | `org.anaos.browser` | README only (Vanadium later) |
 | [ExactCalculator](ExactCalculator/) | `org.anaos.calculator` | README only |
+| [OfflineAi](OfflineAi/) | `org.anaos.ai.*` | README / consent plan (TASK_102) |
 
 Signing map: `docs/APP_SIGNING.md`. Rebrand from GrapheneOS: `docs/ORG_ANAOS_REBRAND.md`.  
 SELinux domains: `docs/SELINUX_APP_DOMAINS.md`.

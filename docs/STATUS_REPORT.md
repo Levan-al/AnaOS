@@ -1,11 +1,13 @@
 # AnaOS status report
 
-Last updated: 2026-10-16 (~27% emulator compile on Hetzner).
+Last updated: 2026-10-16 (~36% emulator compile on Hetzner).
 
 ## Verdict
 
 Foundation + strategy docs landed. **AOSP sync complete.** First emulator
-build (TASK_018) compiling (~25–30%); six app scaffold APKs built locally.
+build (TASK_018) compiling (~36%); six app scaffold APKs built locally.
+Additional planning docs + Updater hybrid-PQ stubs + OfflineAi scaffold this
+batch — still blocked on `BUILD_OK` for platform work.
 
 ## Live infra
 
@@ -13,7 +15,7 @@ build (TASK_018) compiling (~25–30%); six app scaffold APKs built locally.
 | --- | --- |
 | Host | Hetzner `anaos-build` CPX62 — **billing while alive** |
 | Sync | `SYNC_OK` @ 2026-10-16T13:26:52Z (~147G tree) |
-| Build | `sdk_phone64_x86_64-trunk_staging-user` — in progress |
+| Build | `sdk_phone64_x86_64-trunk_staging-user` — in progress (~36%) |
 | Watchdog | tmux `aosp-watchdog` → `/opt/anaos/STATUS.txt` |
 | Cost | See `docs/COST_OPS.md` — delete server after BUILD_OK/fail |
 
@@ -22,8 +24,11 @@ build (TASK_018) compiling (~25–30%); six app scaffold APKs built locally.
 - Branding, repos, manifest, forks, product stubs  
 - Signing docs/scripts (keys not generated)  
 - Strategy A/B/C + security merge gate  
-- Updater / Auditor / Camera scaffolds  
+- Updater / Auditor / Camera / PdfViewer / AppStore / SetupWizard scaffolds  
 - Pixel 8 (`shiba`) stubs  
+- Distribution / testing / memory-safety / release / long-term ops docs  
+- AOSP17 rebase ledger, factory image + AVB lock prep, website IA, network location  
+- Updater `UpdateSignatureVerifier` hybrid PQ scaffold; OfflineAi README  
 
 ## Critical path
 

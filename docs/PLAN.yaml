@@ -265,6 +265,9 @@ tasks:
     category: signing
     dependencies: [25, 18]
     status: pending
+    notes: "Process doc landed (FACTORY_IMAGE.md); blocked on TASK_018 + offline keys."
+    artifacts:
+      - docs/FACTORY_IMAGE.md
   - id: 27
     title: Create adevtool equivalent
     category: device
@@ -272,6 +275,7 @@ tasks:
     status: in_progress
     artifacts:
       - adevtool/README.md
+      - adevtool/CHECKLIST.md
     notes: "Stub + checklist targeting shiba; track grapheneos_adevtool fork."
   - id: 28
     title: Integrate first official device
@@ -304,19 +308,25 @@ tasks:
     category: device
     dependencies: [30, 26]
     status: pending
+    notes: "AVB/lock prep in AVB_BOOTLOADER_LOCK.md; needs signed image."
+    artifacts:
+      - docs/AVB_BOOTLOADER_LOCK.md
   - id: 32
     title: Verify bootloader locking with custom AVB public key
     category: device
     dependencies: [31, 20]
     status: pending
+    artifacts:
+      - docs/AVB_BOOTLOADER_LOCK.md
   - id: 33
     title: Write device porting documentation
     category: documentation
     dependencies: [32]
     status: in_progress
-    notes: "DEVICE_PORTING.md draft ahead of first locked device build."
+    notes: "Full DEVICE_PORTING.md guide; finalize commands after first locked build."
     artifacts:
       - docs/DEVICE_PORTING.md
+      - docs/AVB_BOOTLOADER_LOCK.md
   - id: 34
     title: Create own kernel trees
     category: kernel
@@ -447,7 +457,9 @@ tasks:
     category: privacy
     dependencies: [45]
     status: in_progress
+    notes: "Policy draft; provider package not started."
     artifacts:
+      - docs/NETWORK_LOCATION.md
       - docs/PRIVACY_CONTROLS.md
   - id: 52
     title: Improved MAC address randomization
@@ -679,12 +691,19 @@ tasks:
     title: Write complete build documentation
     category: documentation
     dependencies: [18, 26]
-    status: pending
+    status: in_progress
+    notes: "Expanded BUILD.md runbook; finalize after BUILD_OK + signed factory."
+    artifacts:
+      - docs/BUILD.md
+      - docs/FACTORY_IMAGE.md
   - id: 84
     title: Write device porting guide
     category: documentation
     dependencies: [33]
-    status: pending
+    status: in_progress
+    notes: "DEVICE_PORTING.md expanded; command tables after first green VB."
+    artifacts:
+      - docs/DEVICE_PORTING.md
   - id: 85
     title: Write security architecture documentation
     category: documentation
@@ -723,6 +742,9 @@ tasks:
     category: documentation
     dependencies: [2]
     status: pending
+    notes: "IA draft in WEBSITE.md; blocked on TASK_002 domains."
+    artifacts:
+      - docs/WEBSITE.md
   - id: 90
     title: Automate monthly security patch pipeline
     category: longterm
@@ -781,9 +803,11 @@ tasks:
     category: strategy
     track: A
     dependencies: [95]
-    status: pending
+    status: in_progress
+    notes: "Ledger template ready; first real rebase after TASK_018 + disk."
     artifacts:
       - docs/AOSP17_ADAPTATION.md
+      - docs/AOSP17_REBASE_LEDGER.md
   - id: 97
     title: Security/privacy regression gate for every upstream merge
     category: strategy
@@ -820,7 +844,11 @@ tasks:
     category: strategy
     track: C
     dependencies: [99, 60]
-    status: pending
+    status: in_progress
+    notes: "UpdateSignatureVerifier + HybridPqSignatureVerifier scaffold; no real crypto yet."
+    artifacts:
+      - apps/Updater/app/src/main/java/org/anaos/updater/UpdateSignatureVerifier.kt
+      - docs/PQC_ROADMAP.md
   - id: 101
     title: On-device AI alternatives — threat model and SELinux domain
     category: strategy
@@ -836,4 +864,7 @@ tasks:
     category: strategy
     track: C
     dependencies: [101]
-    status: pending
+    status: in_progress
+    notes: "apps/OfflineAi README + consent rules; no models/APK yet."
+    artifacts:
+      - apps/OfflineAi/README.md
