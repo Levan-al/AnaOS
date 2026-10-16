@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AnaOS platform manifest (TASK_010)
+  Bootstrap: remotes and critical projects. Expand as forks land (TASK_011 / TASK_012).
+-->
+<manifest>
+  <remote name="aosp"
+          fetch="https://android.googlesource.com"
+          review="https://android-review.googlesource.com/" />
+
+  <remote name="anaos"
+          fetch="https://github.com/Levan-al"
+          review="https://github.com/Levan-al" />
+
+  <!-- Pin when first official sync target is chosen -->
+  <default revision="main"
+           remote="anaos"
+           sync-j="4" />
+
+  <!-- AnaOS-owned repositories -->
+  <project path="branding" name="branding" remote="anaos" />
+  <project path="script" name="script" remote="anaos" />
+  <project path="external/hardened_malloc" name="hardened_malloc" remote="anaos" />
+  <project path="vendor/adevtool" name="adevtool" remote="anaos" />
+  <project path="vendor/anaos-state" name="vendor_state" remote="anaos" />
+
+  <project path="packages/apps/Camera" name="platform_packages_apps_Camera" remote="anaos" />
+  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="anaos" />
+  <project path="packages/apps/Auditor" name="platform_packages_apps_Auditor" remote="anaos" />
+  <project path="packages/apps/AppStore" name="platform_packages_apps_AppStore" remote="anaos" />
+  <project path="packages/apps/SetupWizard" name="platform_packages_apps_SetupWizard" remote="anaos" />
+  <project path="packages/apps/PdfViewer" name="platform_packages_apps_PdfViewer" remote="anaos" />
+  <project path="external/vanadium" name="platform_external_vanadium" remote="anaos" />
+
+  <!--
+    AOSP base is pulled via a full AOSP manifest include once the first
+    Android release branch target is selected, e.g.:
+    <include name="aosp-android16.xml" />
+    Critical forks (bionic, frameworks/base, sepolicy, ...) are added in TASK_011.
+  -->
+</manifest>

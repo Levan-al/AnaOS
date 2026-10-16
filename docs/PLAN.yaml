@@ -58,11 +58,11 @@ tasks:
     title: Create source control organization
     category: foundation
     dependencies: [1]
-    status: in_progress
+    status: done
     notes: >
-      GitHub CLI auth as Levan-al OK. Meta pushed to https://github.com/Levan-al/AnaOS.
-      Free org named AnaOS blocked in GitHub UI (name/captcha). Repos created under Levan-al for now;
-      transfer to org when available. AI Ops stays at qizimarket.com/anaos.
+      Bootstrap complete under Levan-al (org AnaOS deferred — UI name/captcha).
+      All planned repos created. Branch protection / signed-commit enforcement
+      still to harden per-repo as maintainers grow.
   - id: 4
     title: Setup build farm
     category: infrastructure
@@ -94,37 +94,51 @@ tasks:
     title: Define license policy and contribution guidelines
     category: foundation
     dependencies: [3]
-    status: pending
+    status: done
+    artifacts:
+      - CONTRIBUTING.md
+      - CODE_OF_CONDUCT.md
+      - LICENSE
   - id: 10
     title: Create platform_manifest
     category: source
     dependencies: [3]
-    status: pending
+    status: done
+    artifacts:
+      - https://github.com/Levan-al/platform_manifest
+      - platform_manifest/default.xml
   - id: 11
     title: Fork critical AOSP and GrapheneOS repositories
     category: source
     dependencies: [10]
     status: pending
+    notes: "Blocked until build machine + AOSP branch pin; do not mass-fork without sync target"
   - id: 12
     title: Fork GrapheneOS unique repositories
     category: source
     dependencies: [10]
     status: pending
+    notes: "Blocked until TASK_011 sync target chosen"
   - id: 13
     title: Create own repositories
     category: source
     dependencies: [3]
-    status: pending
+    status: done
+    notes: "Repos created under Levan-al; app implementations TBD"
   - id: 14
     title: Create branding injection system
     category: source
     dependencies: [13]
-    status: pending
+    status: done
+    notes: "Published https://github.com/Levan-al/branding — final artwork/RRO still placeholders"
   - id: 15
     title: Rewrite product makefiles
     category: source
     dependencies: [14]
-    status: pending
+    status: in_progress
+    artifacts:
+      - device/anaos/common/
+      - device/anaos/emulator/
   - id: 16
     title: Adapt OFFICIAL_BUILD logic
     category: source

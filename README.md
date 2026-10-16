@@ -21,4 +21,10 @@ Copyright (C) The AnaOS Project
 | --- | --- |
 | Branding | [`docs/BRANDING.md`](docs/BRANDING.md) |
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
-| Branding tree | [`branding/`](branding/) |
+| Contributing | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
+| Manifest | https://github.com/Levan-al/platform_manifest |
+| Branding repo | https://github.com/Levan-al/branding |
+
+## GitHub (bootstrap)
+
+All repos currently under [`Levan-al`](https://github.com/Levan-al) until an `AnaOS` organization is available.
