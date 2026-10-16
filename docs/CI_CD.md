@@ -23,5 +23,8 @@ Production release requires **manual approval** before sign/upload.
 ## Current status
 
 - [x] Meta CI on GitHub Actions  
+- [x] Track B gate smoke (`scripts/check-security-gate.sh`) in meta-ci  
 - [ ] Self-hosted runner label for AOSP  
 - [ ] Staged release workflow (TASK_068 / TASK_069)  
+
+Promote staging → release only with `docs/SECURITY_MERGE_GATE.md` ACK.

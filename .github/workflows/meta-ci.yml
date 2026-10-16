@@ -22,11 +22,15 @@ jobs:
           test -f docs/PLAN.yaml
           test -f docs/BRANDING.md
           test -f docs/KEY_CEREMONY.md
+          test -f docs/STRATEGY.md
+          test -f docs/SECURITY_MERGE_GATE.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml
           test -f device/anaos/common/anaos.mk
           test -f device/anaos/common/official.mk
+      - name: Track B security gate smoke
+        run: bash scripts/check-security-gate.sh
       - name: Validate branding config
         run: |
           python3 - <<'PY'

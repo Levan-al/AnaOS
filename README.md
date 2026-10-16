@@ -24,6 +24,7 @@ Copyright (C) The AnaOS Project
 | Doc | Path |
 | --- | --- |
 | Strategy (A/B/C) | [`docs/STRATEGY.md`](docs/STRATEGY.md) |
+| Security merge gate (B) | [`docs/SECURITY_MERGE_GATE.md`](docs/SECURITY_MERGE_GATE.md) |
 | Branding | [`docs/BRANDING.md`](docs/BRANDING.md) |
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |

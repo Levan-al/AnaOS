@@ -648,8 +648,14 @@ tasks:
     category: strategy
     track: B
     dependencies: [45, 77]
-    status: pending
-    notes: "Track B veto; checklist before promoting staging → release."
+    status: in_progress
+    notes: >
+      Checklist + CI smoke landed; full SELinux/AVB automation awaits TASK_077.
+      Process gate usable now for staging→release promotes.
+    artifacts:
+      - docs/SECURITY_MERGE_GATE.md
+      - scripts/check-security-gate.sh
+      - .github/pull_request_template.md
   - id: 98
     title: Publish AnaOS threat-model delta vs stock Android 17
     category: strategy
@@ -662,6 +668,7 @@ tasks:
     track: C
     dependencies: [25, 66]
     status: in_progress
+    notes: "P0 touchpoint inventory filled; hybrid OTA design still pending."
     artifacts:
       - docs/PQC_ROADMAP.md
   - id: 100
