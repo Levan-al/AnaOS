@@ -1,35 +1,26 @@
 # AnaOS status report
 
-Last updated: 2026-10-16 (~85% emulator compile on Hetzner).
+Last updated: 2026-10-16 (TASK_018 BUILD_OK + overlay lunch green).
 
 ## Verdict
 
-Foundation + strategy docs landed. **AOSP sync complete.** First emulator
-build (TASK_018) compiling (~85%) as
-`sdk_phone64_x86_64-trunk_staging-user`. `META_OK` + tmux `aosp-after` armed
-for overlay when `BUILD_OK` lands. See `docs/ROADMAP_NOW.md`.
+**First stock emulator build succeeded** (`sdk_phone64_x86_64-trunk_staging-user`,
+~3h31m). `BUILD_OK` sealed. AnaOS trees overlaid (`OVERLAY_OK`). Lunch
+`anaos_emulator-trunk_staging-userdebug` works. Overlay rebuild started in
+tmux `aosp-overlay`.
 
 ## Live infra
 
 | Item | State |
 | --- | --- |
-| Host | Hetzner `anaos-build` CPX62 — **billing while alive** |
-| Sync | `SYNC_OK` @ 2026-10-16T13:26:52Z (~216G tree) |
-| Build | `sdk_phone64_x86_64-trunk_staging-user` — ~85% |
-| Watchdog | tmux `aosp-watchdog` |
-| After-build | tmux `aosp-after` waiting on `BUILD_OK` |
-| Meta | `/opt/anaos/meta` (`META_OK`) |
-| Cost | See `docs/COST_OPS.md` — delete after BUILD_OK/fail |
-
-## Done (high level)
-
-- Branding, repos, manifest, forks, product stubs  
-- Signing docs/scripts (keys not generated)  
-- Strategy A/B/C + security merge gate  
-- App scaffolds + design docs  
-- Emulator product stubs + meta staging + after-build automation  
+| Host | Hetzner `anaos-build` CPX62 — **still billing** |
+| Sync | `SYNC_OK` |
+| Stock build | `BUILD_OK` @ 2026-10-16T17:05:54Z — product `emu64x` |
+| Meta | `/opt/anaos/meta` @ latest main |
+| Overlay | `OVERLAY_OK` + `OVERLAY_LUNCH_OK` |
+| Next | `m -j4` for `anaos_emulator` in tmux `aosp-overlay` |
+| Cost | Delete host after overlay rebuild/smoke (`COST_OPS.md`) |
 
 ## Critical path
 
-Finish TASK_018 (`BUILD_OK`) → overlay (`aosp-after`) → smoke → cost teardown /
-air-gap keys later.
+Overlay rebuild finish → smoke props → **delete CPX62** → air-gap keys / AOSP17 later.
