@@ -26,6 +26,7 @@ duplicating long tables.
 | [AOSP17_TAG_SHORTLIST.md](AOSP17_TAG_SHORTLIST.md) | Tag pin |
 | [AOSP17_REBASE_LEDGER.md](AOSP17_REBASE_LEDGER.md) | Conflict ledger |
 | [CI_CD.md](CI_CD.md) | CI stages |
+| [POST_BUILD_OVERLAY.md](POST_BUILD_OVERLAY.md) | After BUILD_OK |
 | [REPOSITORIES.md](REPOSITORIES.md) | Repo map |
 
 ## Signing & release
@@ -72,6 +73,7 @@ duplicating long tables.
 | --- | --- |
 | [UPDATE_SERVER.md](UPDATE_SERVER.md) | OTA architecture |
 | [DISTRIBUTION.md](DISTRIBUTION.md) | Pipeline overview |
+| [DELTA_UPDATES.md](DELTA_UPDATES.md) | Incremental OTA |
 | [ARTIFACT_CDN.md](ARTIFACT_CDN.md) | CDN layout |
 | [ROLLBACK_PROTECTION.md](ROLLBACK_PROTECTION.md) | Anti-rollback |
 | [INSTALL_CLI.md](INSTALL_CLI.md) | CLI flash |
@@ -96,4 +98,7 @@ duplicating long tables.
 | [TESTING.md](TESTING.md) | Suites |
 | [LONGTERM_OPS.md](LONGTERM_OPS.md) | Long-term |
 | [MONTHLY_SECURITY_PATCHES.md](MONTHLY_SECURITY_PATCHES.md) | ASP pipeline |
+| [ANDROID_VERSION_PORT.md](ANDROID_VERSION_PORT.md) | Major version ports |
+| [HARDWARE_GENERATION.md](HARDWARE_GENERATION.md) | New Pixel gens |
+| [COMMUNITY_SUPPORT.md](COMMUNITY_SUPPORT.md) | Support channels |
 | [ATTESTATION_SERVER.md](ATTESTATION_SERVER.md) | Auditor backend |

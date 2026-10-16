@@ -582,8 +582,10 @@ tasks:
     category: distribution
     dependencies: [66]
     status: in_progress
+    notes: "Design doc; enable after two full signed releases."
     artifacts:
       - docs/DISTRIBUTION.md
+      - docs/DELTA_UPDATES.md
   - id: 68
     title: Implement staged rollout mechanism
     category: distribution
@@ -768,6 +770,7 @@ tasks:
     artifacts:
       - docs/LONGTERM_OPS.md
       - docs/AOSP17_ADAPTATION.md
+      - docs/ANDROID_VERSION_PORT.md
   - id: 92
     title: Define new hardware generation support process
     category: longterm
@@ -775,14 +778,16 @@ tasks:
     status: in_progress
     artifacts:
       - docs/LONGTERM_OPS.md
+      - docs/HARDWARE_GENERATION.md
   - id: 93
     title: Setup community and enterprise support channels
     category: longterm
     dependencies: [89]
     status: in_progress
-    notes: "Draft in LONGTERM_OPS; blocked on public site/domains."
+    notes: "Draft; branded channels blocked on public site/domains."
     artifacts:
       - docs/LONGTERM_OPS.md
+      - docs/COMMUNITY_SUPPORT.md
 
   # --- Parallel strategy tracks (v2.1) — see docs/STRATEGY.md ---
   - id: 94

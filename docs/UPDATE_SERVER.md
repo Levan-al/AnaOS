@@ -14,12 +14,33 @@ in Updater — never third-party app stores.
 
 ## Components
 
-1. **Metadata** — JSON/protobuf per device + channel (`UpdateMetadata` shape)  
+1. **Metadata** — JSON per device + channel (schema below)  
 2. **Signing** — classical release/otakey; hybrid PQ later (TRACK C / TASK_099)  
-3. **Storage** — object store or static CDN (TASK_006)  
-4. **Delta** — TASK_067  
-5. **Staged rollout** — TASK_068  
-6. **Factory/OTA pipeline** — TASK_069 (offline sign → upload public artifacts)  
+3. **Storage** — object store or static CDN (`ARTIFACT_CDN.md`)  
+4. **Delta** — `DELTA_UPDATES.md`  
+5. **Staged rollout** — cohort fields in metadata  
+6. **Factory/OTA pipeline** — offline sign → upload (`FACTORY_IMAGE.md`)  
+7. **Rollback** — `ROLLBACK_PROTECTION.md`  
+
+## Metadata schema (draft)
+
+Aligns with Updater `UpdateMetadata`:
+
+```json
+{
+  "buildNumber": "2026101600",
+  "channel": "stable",
+  "device": "shiba",
+  "incremental": false,
+  "downloadUrl": "https://dl.anaos.org/ota/2026101600/payload.bin",
+  "sha256": "...",
+  "minBuildNumber": "2026090100",
+  "classicalSignature": "...",
+  "pqSignature": null,
+  "cohort": { "percent": 100 },
+  "securityPatchLevel": "2026-10-01"
+}
+```
 
 ## Security
 
@@ -35,4 +56,5 @@ GET https://releases.anaos.org/stable/<device>/metadata.json
 GET https://dl.anaos.org/ota/<build_number>/payload.bin
 ```
 
-Signatures verified client-side before apply.
+Signatures verified client-side before apply. Installers:
+`INSTALL_CLI.md`, `WEBUSB_INSTALLER.md`.
