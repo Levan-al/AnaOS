@@ -32,6 +32,9 @@ Copyright (C) The AnaOS Project
 | org.anaos rebrand | [`docs/ORG_ANAOS_REBRAND.md`](docs/ORG_ANAOS_REBRAND.md) |
 | Apps scaffolds | [`apps/`](apps/) |
 | Cost ops (Hetzner) | [`docs/COST_OPS.md`](docs/COST_OPS.md) |
+| Kernel plan | [`docs/KERNEL.md`](docs/KERNEL.md) |
+| Update servers | [`docs/UPDATE_SERVER.md`](docs/UPDATE_SERVER.md) |
+| SELinux hardening | [`docs/SELINUX_HARDENING.md`](docs/SELINUX_HARDENING.md) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |
 | AOSP 17 tag shortlist | [`docs/AOSP17_TAG_SHORTLIST.md`](docs/AOSP17_TAG_SHORTLIST.md) |
 | PQC roadmap | [`docs/PQC_ROADMAP.md`](docs/PQC_ROADMAP.md) |

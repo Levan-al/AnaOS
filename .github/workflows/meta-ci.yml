@@ -28,6 +28,10 @@ jobs:
           test -f docs/AOSP17_TAG_SHORTLIST.md
           test -f docs/STATUS_REPORT.md
           test -f docs/ORG_ANAOS_REBRAND.md
+          test -f docs/KERNEL.md
+          test -f docs/SELINUX_HARDENING.md
+          test -f docs/UPDATE_SERVER.md
+          test -f docs/DNS_PRIVACY.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml

@@ -318,12 +318,16 @@ tasks:
     title: Create own kernel trees
     category: kernel
     dependencies: [10]
-    status: pending
+    status: in_progress
+    notes: "KERNEL.md plan for shiba; repos not created yet."
+    artifacts:
+      - docs/KERNEL.md
   - id: 35
     title: Integrate kernel hardening patches
     category: kernel
     dependencies: [34]
     status: pending
+    notes: "Blocked on TASK_034 repo pins."
   - id: 36
     title: Enable Memory Tagging Extension (MTE)
     category: kernel
@@ -381,7 +385,11 @@ tasks:
     title: Maximum SELinux policy hardening
     category: isolation
     dependencies: [11]
-    status: pending
+    status: in_progress
+    notes: "Hardening checklist + app domain map; policy code after overlay."
+    artifacts:
+      - docs/SELINUX_HARDENING.md
+      - docs/SELINUX_APP_DOMAINS.md
   - id: 46
     title: Deepen storage isolation / scoped storage
     category: isolation
@@ -421,7 +429,10 @@ tasks:
     title: DNS-over-HTTPS / DNS-over-TLS by default
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    notes: "Policy draft; product overlay after TASK_018."
+    artifacts:
+      - docs/DNS_PRIVACY.md
   - id: 54
     title: Metadata stripping system
     category: privacy
@@ -509,7 +520,10 @@ tasks:
     title: Create own update server architecture
     category: distribution
     dependencies: [2, 6]
-    status: pending
+    status: in_progress
+    notes: "Architecture draft; blocked on domains (002) + CDN (006) for live hosting."
+    artifacts:
+      - docs/UPDATE_SERVER.md
   - id: 67
     title: Support delta updates
     category: distribution
