@@ -58,9 +58,18 @@ else
 fi
 m_rc=${PIPESTATUS[0]}
 set -e
+
+# Prefer Soong success banner — some hosts return odd pipe statuses after success.
+if grep -q 'build completed successfully' "$LOG"; then
+  m_rc=0
+fi
+
 if [[ "$m_rc" -ne 0 ]]; then
   echo "[$(date -u +%H:%M:%S)] BUILD_FAIL rc=$m_rc target=$chosen" | tee -a "$LOG"
   exit "$m_rc"
 fi
+
+# Write marker immediately so watchdog cannot race-restart this session.
 echo "[$(date -u +%H:%M:%S)] BUILD_OK target=$chosen" | tee -a "$LOG"
 date -u +%Y-%m-%dT%H:%M:%SZ > /opt/anaos/BUILD_OK
+echo "target=$chosen" > /opt/anaos/BUILD_OK_META

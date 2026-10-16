@@ -61,6 +61,15 @@ while true; do
     continue
   fi
 
+  # If Soong already reported success but BUILD_OK was not written (race), seal it.
+  if [[ -f "$LOG" ]] && grep -q 'build completed successfully' "$LOG"; then
+    echo "[$(date -u +%H:%M:%S)] success banner in log — writing BUILD_OK" | tee -a /opt/anaos/watchdog.log
+    date -u +%Y-%m-%dT%H:%M:%SZ > /opt/anaos/BUILD_OK
+    write_status "build_ok" "recovered BUILD_OK from success banner"
+    sleep "$CHECK_EVERY"
+    continue
+  fi
+
   if ! build_running; then
     echo "[$(date -u +%H:%M:%S)] build session missing — restart" | tee -a /opt/anaos/watchdog.log
     start_build

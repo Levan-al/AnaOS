@@ -39,17 +39,33 @@ source build/envsetup.sh
 set -e
 
 LUNCH_OUT=/tmp/anaos-lunch.txt
-set +e
-lunch anaos_emulator-userdebug >"$LUNCH_OUT" 2>&1
-lunch_rc=$?
-set -e
-cat "$LUNCH_OUT" | tee -a "$LOG" || true
+LUNCH_TARGETS=(
+  "anaos_emulator-trunk_staging-userdebug"
+  "anaos_emulator-trunk_staging-user"
+  "anaos_emulator-userdebug"
+  "anaos_emulator-user"
+)
+chosen_lunch=""
+lunch_rc=1
+for t in "${LUNCH_TARGETS[@]}"; do
+  log "trying lunch $t"
+  set +e
+  lunch "$t" >"$LUNCH_OUT" 2>&1
+  lunch_rc=$?
+  set -e
+  cat "$LUNCH_OUT" | tee -a "$LOG" || true
+  if [[ "$lunch_rc" -eq 0 ]]; then
+    chosen_lunch=$t
+    break
+  fi
+done
 
-if [[ "$lunch_rc" -ne 0 ]]; then
-  log "lunch anaos_emulator-userdebug failed (rc=$lunch_rc) — record for pin fix; no auto rebuild"
+if [[ -z "$chosen_lunch" ]]; then
+  log "all anaos_emulator lunch targets failed — record for pin fix; no auto rebuild"
   date -u +%Y-%m-%dT%H:%M:%SZ > /opt/anaos/OVERLAY_LUNCH_FAIL
   exit 0
 fi
+echo "lunch=$chosen_lunch" > /opt/anaos/OVERLAY_LUNCH_META
 
 date -u +%Y-%m-%dT%H:%M:%SZ > /opt/anaos/OVERLAY_LUNCH_OK
 log "lunch OK"
