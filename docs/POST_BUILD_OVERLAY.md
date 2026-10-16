@@ -17,7 +17,17 @@ bash /opt/anaos/remote-stage-meta.sh
 # → /opt/anaos/meta + /opt/anaos/META_OK
 ```
 
-## Overlay after BUILD_OK
+## Automated (preferred on bring-up host)
+
+```bash
+# Start anytime; waits for BUILD_OK then overlay (+ optional m)
+tmux new -d -s aosp-after 'bash /opt/anaos/remote-after-build.sh'
+# Logs: /opt/anaos/after-build.log , overlay-build.log
+# Markers: OVERLAY_OK, OVERLAY_LUNCH_OK|FAIL, OVERLAY_BUILD_OK
+# Set ANAOS_AUTO_REBUILD=0 to stop after lunch probe
+```
+
+## Manual overlay after BUILD_OK
 
 ```bash
 export META=/opt/anaos/meta

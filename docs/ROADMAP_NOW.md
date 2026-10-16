@@ -11,11 +11,10 @@ Honest next steps while Hetzner emulator `m` runs. Not a substitute for
 
 ## Immediately after BUILD_OK
 
-1. Confirm `META_OK` (or run `remote-stage-meta.sh`)  
-2. `POST_BUILD_OVERLAY.md` → `OVERLAY_OK`  
-3. `lunch anaos_emulator-userdebug` + `m -j4`  
-4. `EMULATOR_SMOKE.md`  
-5. Snapshot logs; **delete or schedule** CPX62 (`COST_OPS.md`)  
+1. Prefer tmux `aosp-after` → `remote-after-build.sh` (meta pull + overlay + lunch + `m`)  
+2. Or manual steps in `POST_BUILD_OVERLAY.md`  
+3. `EMULATOR_SMOKE.md`  
+4. Snapshot logs; **delete or schedule** CPX62 (`COST_OPS.md`)  
 
 ## Next engineering (order)
 

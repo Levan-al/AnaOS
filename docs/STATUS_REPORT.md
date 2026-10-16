@@ -1,12 +1,13 @@
 # AnaOS status report
 
-Last updated: 2026-10-16 (~80% emulator compile on Hetzner).
+Last updated: 2026-10-16 (~84% emulator compile on Hetzner).
 
 ## Verdict
 
 Foundation + strategy docs landed. **AOSP sync complete.** First emulator
-build (TASK_018) compiling (~80%). Emulator product stubs + `remote-stage-meta.sh`
-prepared for immediate post-`BUILD_OK` overlay. See `docs/ROADMAP_NOW.md`.
+build (TASK_018) compiling (~84%). `META_OK` on host; `remote-after-build.sh`
+armed to overlay (+ optional rebuild) when `BUILD_OK` lands. See
+`docs/ROADMAP_NOW.md`.
 
 ## Live infra
 
