@@ -27,6 +27,8 @@ duplicating long tables.
 | [AOSP17_REBASE_LEDGER.md](AOSP17_REBASE_LEDGER.md) | Conflict ledger |
 | [CI_CD.md](CI_CD.md) | CI stages |
 | [POST_BUILD_OVERLAY.md](POST_BUILD_OVERLAY.md) | After BUILD_OK |
+| [EMULATOR_SMOKE.md](EMULATOR_SMOKE.md) | Emulator checklist |
+| [GLOSSARY.md](GLOSSARY.md) | Terms |
 | [REPOSITORIES.md](REPOSITORIES.md) | Repo map |
 
 ## Signing & release
@@ -74,6 +76,7 @@ duplicating long tables.
 | [UPDATE_SERVER.md](UPDATE_SERVER.md) | OTA architecture |
 | [DISTRIBUTION.md](DISTRIBUTION.md) | Pipeline overview |
 | [DELTA_UPDATES.md](DELTA_UPDATES.md) | Incremental OTA |
+| [STAGED_ROLLOUT.md](STAGED_ROLLOUT.md) | Cohort rollout |
 | [ARTIFACT_CDN.md](ARTIFACT_CDN.md) | CDN layout |
 | [ROLLBACK_PROTECTION.md](ROLLBACK_PROTECTION.md) | Anti-rollback |
 | [INSTALL_CLI.md](INSTALL_CLI.md) | CLI flash |
@@ -102,3 +105,4 @@ duplicating long tables.
 | [HARDWARE_GENERATION.md](HARDWARE_GENERATION.md) | New Pixel gens |
 | [COMMUNITY_SUPPORT.md](COMMUNITY_SUPPORT.md) | Support channels |
 | [ATTESTATION_SERVER.md](ATTESTATION_SERVER.md) | Auditor backend |
+| [AUDITOR_INTEGRATION.md](AUDITOR_INTEGRATION.md) | Auditor client integration |

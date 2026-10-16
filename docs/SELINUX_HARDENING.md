@@ -1,7 +1,7 @@
 # SELinux hardening (TASK_045)
 
 Maximum enforcing policy for AnaOS `user` builds. Extends
-`docs/SELINUX_APP_DOMAINS.md`.
+`SELINUX_APP_DOMAINS.md`.
 
 ## Non-negotiable
 
@@ -15,9 +15,10 @@ Maximum enforcing policy for AnaOS `user` builds. Extends
 | --- | --- |
 | Base | Track `platform_system_sepolicy` fork; rebase on AOSP 17 |
 | Neverallows | Expand GrapheneOS-style neverallows; document conflicts |
-| Apps | Updater / Auditor / Camera / Store / PDF / SetupWizard domains |
+| Apps | Domains table in `SELINUX_APP_DOMAINS.md` |
 | Vendor | `device/anaos/shiba/sepolicy` after TASK_029 |
-| Tests | TASK_077 regression: boot + denied audit noise budget |
+| AI / backup | `anaos_ai`, `anaos_backup` when those packages land |
+| Tests | TASK_077: boot + denied audit noise budget |
 
 ## Order
 
@@ -25,6 +26,12 @@ Maximum enforcing policy for AnaOS `user` builds. Extends
 2. Overlay AnaOS product + app domains  
 3. Device vendor sepolicy  
 4. Neverallow ratchet + CTS/VTS  
+
+## Bring-up discipline
+
+Eng/userdebug may log denials heavily — fix forward, do not ship
+`setenforce 0`. Temporary `permissive` domain requires: issue link, owner,
+removal date.
 
 ## Ban
 

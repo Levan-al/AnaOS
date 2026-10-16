@@ -593,6 +593,7 @@ tasks:
     status: in_progress
     artifacts:
       - docs/DISTRIBUTION.md
+      - docs/STAGED_ROLLOUT.md
   - id: 69
     title: Automatic factory images and OTA generation pipeline
     category: distribution
@@ -639,11 +640,16 @@ tasks:
     category: attestation
     dependencies: [59, 73]
     status: pending
+    notes: "Integration checklist drafted; blocked on domains + signed device."
+    artifacts:
+      - docs/AUDITOR_INTEGRATION.md
   - id: 75
     title: Hardware-backed attestation testing and validation
     category: attestation
     dependencies: [74]
     status: pending
+    artifacts:
+      - docs/AUDITOR_INTEGRATION.md
   - id: 76
     title: Integrate CTS + VTS
     category: testing
