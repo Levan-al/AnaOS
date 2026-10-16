@@ -28,6 +28,7 @@ duplicating long tables.
 | [CI_CD.md](CI_CD.md) | CI stages |
 | [POST_BUILD_OVERLAY.md](POST_BUILD_OVERLAY.md) | After BUILD_OK |
 | [EMULATOR_SMOKE.md](EMULATOR_SMOKE.md) | Emulator checklist |
+| [BUILD_FAILURE_PLAYBOOK.md](BUILD_FAILURE_PLAYBOOK.md) | Host failure triage |
 | [GLOSSARY.md](GLOSSARY.md) | Terms |
 | [REPOSITORIES.md](REPOSITORIES.md) | Repo map |
 
@@ -88,6 +89,8 @@ duplicating long tables.
 | Doc | Topic |
 | --- | --- |
 | [AOSP_APPS_HARDENING.md](AOSP_APPS_HARDENING.md) | Stock apps |
+| [BROWSER_WEBVIEW.md](BROWSER_WEBVIEW.md) | Vanadium-class browser |
+| [APPSTORE.md](APPSTORE.md) | First-party store |
 | [ENCRYPTED_BACKUP.md](ENCRYPTED_BACKUP.md) | Backup |
 | [ORG_ANAOS_REBRAND.md](ORG_ANAOS_REBRAND.md) | Rebrand map |
 | [PQC_ROADMAP.md](PQC_ROADMAP.md) | TRACK C1 |

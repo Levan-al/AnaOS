@@ -2,8 +2,9 @@
 
 Scaffold for TASK_061. First-party app distribution metadata client.
 
-- Application ID: `org.anaos.appstore`
-- Host: `apps.anaos.org` only (when TASK_002 domains live)
-- No third-party stores bundled
+- Application ID: `org.anaos.appstore`  
+- Host: `apps.anaos.org` only (when TASK_002 domains live)  
+- Design: `docs/APPSTORE.md`  
+- No third-party stores bundled  
 
 Platform tree: `platform_packages_apps_AppStore`.

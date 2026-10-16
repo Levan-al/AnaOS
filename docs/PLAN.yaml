@@ -503,9 +503,10 @@ tasks:
     category: apps
     dependencies: [13]
     status: in_progress
-    notes: "README placeholder; full Chromium not built on CPX62 beside AOSP."
+    notes: "README + design doc; full Chromium not built on CPX62 beside AOSP."
     artifacts:
       - apps/Browser/README.md
+      - docs/BROWSER_WEBVIEW.md
   - id: 58
     title: Create PDF Viewer
     category: apps
@@ -537,9 +538,10 @@ tasks:
     category: apps
     dependencies: [13]
     status: in_progress
-    notes: "Scaffold at apps/AppStore."
+    notes: "Scaffold + APPSTORE.md design."
     artifacts:
       - apps/AppStore/
+      - docs/APPSTORE.md
   - id: 62
     title: Redesign Setup Wizard
     category: apps
