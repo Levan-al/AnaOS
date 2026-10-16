@@ -15,8 +15,9 @@ Keep billable idle time low while TASK_018 runs.
 ## After BUILD_OK or hard fail
 
 1. Confirm artifacts / logs needed.  
-2. **Delete** `anaos-build` in Hetzner Console (or snapshot then delete).  
-3. Revoke API token `AnaOS-build` when rental ends (`BUILD_HOST.md`).  
+2. Optional: `META=... bash scripts/post-build-overlay.sh` then AnaOS lunch rebuild.  
+3. **Delete** `anaos-build` in Hetzner Console (or snapshot then delete).  
+4. Revoke API token `AnaOS-build` when rental ends (`BUILD_HOST.md`).  
 
 Power-off alone may still bill — prefer delete.
 

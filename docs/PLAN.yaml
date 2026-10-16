@@ -198,9 +198,9 @@ tasks:
     dependencies: [17]
     status: in_progress
     notes: >
-      SYNC_OK 2026-10-16T13:26:52Z. Emulator build in progress on Hetzner
+      SYNC_OK 2026-10-16T13:26:52Z. Emulator build ~27%+ on Hetzner
       (sdk_phone64_x86_64-trunk_staging-user); watchdog + 32G swap; BUILD_OK pending.
-      Cost ops: docs/COST_OPS.md — delete host after conclusive result.
+      After BUILD_OK: scripts/post-build-overlay.sh. Cost: docs/COST_OPS.md.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing
@@ -348,17 +348,25 @@ tasks:
     title: Full hardened_malloc integration
     category: memory_safety
     dependencies: [11, 12]
-    status: pending
+    status: in_progress
+    notes: "Integration checklist drafted; wire after TASK_018 + tree overlay."
+    artifacts:
+      - docs/HARDENED_MALLOC.md
   - id: 41
     title: Enable Control Flow Integrity (CFI)
     category: memory_safety
     dependencies: [11]
-    status: pending
+    status: in_progress
+    notes: "Policy doc landed; device validation after shiba/user builds."
+    artifacts:
+      - docs/CFI_AND_SCS.md
   - id: 42
     title: Enable Shadow Call Stack / Pointer Authentication
     category: memory_safety
     dependencies: [41]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/CFI_AND_SCS.md
   - id: 43
     title: Enable integer overflow and bounds checking
     category: memory_safety
@@ -436,7 +444,10 @@ tasks:
     title: Create Browser + WebView (Vanadium equivalent)
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    notes: "README placeholder; full Chromium not built on CPX62 beside AOSP."
+    artifacts:
+      - apps/Browser/README.md
   - id: 58
     title: Create PDF Viewer
     category: apps

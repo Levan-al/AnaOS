@@ -11,6 +11,7 @@ Development scaffolds under `org.anaos.*`. Platform merge targets are
 | [PdfViewer](PdfViewer/) | `org.anaos.pdfviewer` | scaffold |
 | [AppStore](AppStore/) | `org.anaos.appstore` | scaffold |
 | [SetupWizard](SetupWizard/) | `org.anaos.setupwizard` | scaffold |
+| [Browser](Browser/) | `org.anaos.browser` | README only (Vanadium later) |
 
 Signing map: `docs/APP_SIGNING.md`. Rebrand from GrapheneOS: `docs/ORG_ANAOS_REBRAND.md`.  
 SELinux domains: `docs/SELINUX_APP_DOMAINS.md`.
