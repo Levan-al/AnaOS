@@ -6,14 +6,16 @@ Honest next steps while Hetzner emulator `m` runs. Not a substitute for
 ## Now (blocked on BUILD_OK)
 
 1. Keep watchdog; do not second-sync AOSP 17 on same disk  
-2. Parallel docs/scaffolds only (this meta repo)  
+2. Stage meta on host anytime: `remote-stage-meta.sh` → `META_OK`  
+3. Parallel docs/scaffolds in this meta repo  
 
 ## Immediately after BUILD_OK
 
-1. `POST_BUILD_OVERLAY.md` → `OVERLAY_OK`  
-2. `lunch anaos_emulator-userdebug` (or documented name) + `m -j4`  
-3. `EMULATOR_SMOKE.md`  
-4. Snapshot logs; **delete or schedule** CPX62 (`COST_OPS.md`)  
+1. Confirm `META_OK` (or run `remote-stage-meta.sh`)  
+2. `POST_BUILD_OVERLAY.md` → `OVERLAY_OK`  
+3. `lunch anaos_emulator-userdebug` + `m -j4`  
+4. `EMULATOR_SMOKE.md`  
+5. Snapshot logs; **delete or schedule** CPX62 (`COST_OPS.md`)  
 
 ## Next engineering (order)
 
