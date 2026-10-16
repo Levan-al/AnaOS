@@ -198,9 +198,9 @@ tasks:
     dependencies: [17]
     status: in_progress
     notes: >
-      Hetzner anaos-build: android-latest-release sync still running (~146GB,
-      2026-10-16); SYNC_OK not yet. Repair script ready for ltp/mbedtls/enum34.
-      Post-sync: scripts/overlay-anaos-into-aosp.sh then lunch/build.
+      SYNC_OK 2026-10-16T13:26:52Z. Emulator build in progress on Hetzner
+      (sdk_phone64_x86_64-trunk_staging-user); watchdog + 32G swap; BUILD_OK pending.
+      Cost ops: docs/COST_OPS.md — delete host after conclusive result.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing
@@ -428,7 +428,10 @@ tasks:
     title: Create Camera app
     category: apps
     dependencies: [13, 45]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/Camera (org.anaos.camera)."
+    artifacts:
+      - apps/Camera/
   - id: 57
     title: Create Browser + WebView (Vanadium equivalent)
     category: apps
@@ -443,7 +446,10 @@ tasks:
     title: Create Auditor app
     category: apps
     dependencies: [13, 73]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/Auditor (org.anaos.auditor)."
+    artifacts:
+      - apps/Auditor/
   - id: 60
     title: Create Updater app
     category: apps

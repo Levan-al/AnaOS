@@ -1,35 +1,30 @@
 # AnaOS status report
 
-Last updated: 2026-10-16 (UTC+4 session). Canonical task states: `docs/PLAN.yaml`.
+Last updated: 2026-10-16 (build in progress on Hetzner).
 
 ## Verdict
 
-Foundation and strategy docs are in place. Critical path is **AOSP sync → first emulator build (TASK_018)**. No official signed images yet.
+Foundation + strategy docs landed. **AOSP sync complete.** First emulator
+build (TASK_018) compiling on Hetzner; watchdog watches for stalls.
 
 ## Live infra
 
 | Item | State |
 | --- | --- |
-| Host | Hetzner `anaos-build` CPX62 (`docs/BUILD_HOST.md`) |
-| Tree | `/opt/anaos/aosp` — sync in progress (`android-latest-release`) |
-| Watcher | tmux `aosp-build` → repair on failure → `remote-aosp-build.sh` |
-| GitHub | `Levan-al/*` (AnaOS org deferred) |
+| Host | Hetzner `anaos-build` CPX62 — **billing while alive** |
+| Sync | `SYNC_OK` @ 2026-10-16T13:26:52Z (~147G tree) |
+| Build | `sdk_phone64_x86_64-trunk_staging-user` — in progress |
+| Watchdog | tmux `aosp-watchdog` → `/opt/anaos/STATUS.txt` |
+| Cost | See `docs/COST_OPS.md` — delete server after BUILD_OK/fail |
 
 ## Done (high level)
 
-- Branding, repos, manifest, forks, product/`official.mk` stubs  
-- Signing docs + air-gap scripts (keys not generated)  
-- meta-ci + Track B merge gate  
-- Strategy A/B/C docs; AOSP 17 P0 tag `android-17.0.0_r1`  
-- Pixel 8 (`shiba`) device stubs  
-
-## Gaps
-
-- TASK_018 build not started until `SYNC_OK`  
-- Offline keygen not run  
-- Domains / CDN / OTA servers blocked on TASK_002  
-- Real adevtool extract, hardening (040+), full apps  
+- Branding, repos, manifest, forks, product stubs  
+- Signing docs/scripts (keys not generated)  
+- Strategy A/B/C + security merge gate  
+- Updater / Auditor / Camera scaffolds  
+- Pixel 8 (`shiba`) stubs  
 
 ## Critical path
 
-`SYNC_OK` → repair if needed → emulator `m` → overlay AnaOS trees → B gate → later AOSP 17 pin + air-gap keys → signed image.
+Finish TASK_018 (`BUILD_OK`) → overlay AnaOS trees → B gate → later AOSP 17 pin + air-gap keys.
