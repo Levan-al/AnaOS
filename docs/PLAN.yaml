@@ -59,7 +59,10 @@ tasks:
     category: foundation
     dependencies: [1]
     status: in_progress
-    notes: "GitHub chosen. AI Ops Ana OS stays at qizimarket.com/anaos; this repo is Android OS only."
+    notes: >
+      GitHub CLI auth as Levan-al OK. Meta pushed to https://github.com/Levan-al/AnaOS.
+      Free org named AnaOS blocked in GitHub UI (name/captcha). Repos created under Levan-al for now;
+      transfer to org when available. AI Ops stays at qizimarket.com/anaos.
   - id: 4
     title: Setup build farm
     category: infrastructure

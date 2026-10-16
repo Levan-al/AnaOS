@@ -4,7 +4,10 @@
 
 **Decision:** GitHub (public OSS + Actions).
 
-Create organization **AnaOS** at https://github.com/organizations/plan (requires a logged-in GitHub account).
+**Current host (bootstrap):** personal account [Levan-al](https://github.com/Levan-al)  
+**Meta repo:** https://github.com/Levan-al/AnaOS  
+
+Organization named `AnaOS` could not be created yet (GitHub UI name/captcha). Create a free org later and transfer these repos. Until then all TASK_003 repos live under `Levan-al/`.
 
 Scope: Android hardened OS only. AI Ops landing at qizimarket.com/anaos is unrelated (see `PRODUCT_SCOPE.md`).
 
