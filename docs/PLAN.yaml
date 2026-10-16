@@ -11,13 +11,28 @@ metadata:
   copyright: "Copyright (C) The AnaOS Project"
   primary_license: Apache-2.0
   secondary_license: GPLv2
-  version: "2.0"
+  version: "2.1"
   format: machine-readable
   language: en
+  strategy_doc: docs/STRATEGY.md
+  parallel_tracks:
+    - id: A
+      name: aosp17_adaptation
+      summary: Fast, controlled absorption of AOSP 17 platform changes
+    - id: B
+      name: security_privacy_primacy
+      summary: Maintain security/privacy advantage; gates A and C merges
+    - id: C
+      name: innovation_pqc_ai
+      summary: PQC roadmap + on-device AI alternatives (not cloud AI Ops)
 
 execution_rules:
   strict_order: true
   skip_forbidden: true
+  # Tracks A/B/C may advance in parallel for planning/docs/prototypes;
+  # release gates (signing, VB green) remain strict.
+  parallel_tracks_allowed: true
+  track_b_veto_on_security_regressions: true
   private_keys_offline: true
   all_production_builds_must_be_signed: true
   verified_boot_state_required: green
@@ -27,6 +42,7 @@ execution_rules:
   zero_cost_infrastructure: true
   free_tier_preferred: true
   self_hosted_when_needed: true
+  not_a_stock_android_clone: true
   security_features_non_negotiable:
     - hardened_malloc
     - CFI
@@ -598,4 +614,74 @@ tasks:
     title: Setup community and enterprise support channels
     category: longterm
     dependencies: [89]
+    status: pending
+
+  # --- Parallel strategy tracks (v2.1) — see docs/STRATEGY.md ---
+  - id: 94
+    title: Adopt three-track strategy (AOSP17 / security / PQC+AI)
+    category: strategy
+    track: [A, B, C]
+    dependencies: []
+    status: done
+    artifacts:
+      - docs/STRATEGY.md
+      - docs/AOSP17_ADAPTATION.md
+      - docs/PQC_ROADMAP.md
+      - docs/AI_ALTERNATIVES.md
+  - id: 95
+    title: Pin platform_manifest to explicit AOSP 17 release tag
+    category: strategy
+    track: A
+    dependencies: [10, 18]
+    status: pending
+    notes: "Replace floating android-latest-release for official pins."
+  - id: 96
+    title: Maintain AOSP 17 rebase conflict ledger and staging branch
+    category: strategy
+    track: A
+    dependencies: [95]
+    status: pending
+    artifacts:
+      - docs/AOSP17_ADAPTATION.md
+  - id: 97
+    title: Security/privacy regression gate for every upstream merge
+    category: strategy
+    track: B
+    dependencies: [45, 77]
+    status: pending
+    notes: "Track B veto; checklist before promoting staging → release."
+  - id: 98
+    title: Publish AnaOS threat-model delta vs stock Android 17
+    category: strategy
+    track: B
+    dependencies: [85]
+    status: pending
+  - id: 99
+    title: PQC inventory and hybrid OTA/signing design
+    category: strategy
+    track: C
+    dependencies: [25, 66]
+    status: in_progress
+    artifacts:
+      - docs/PQC_ROADMAP.md
+  - id: 100
+    title: Prototype hybrid PQ verification in Updater
+    category: strategy
+    track: C
+    dependencies: [99, 60]
+    status: pending
+  - id: 101
+    title: On-device AI alternatives — threat model and SELinux domain
+    category: strategy
+    track: C
+    dependencies: [45]
+    status: in_progress
+    notes: "Offline-first; separate from qizimarket AI Ops."
+    artifacts:
+      - docs/AI_ALTERNATIVES.md
+  - id: 102
+    title: Ship offline OCR/STT MVP under org.anaos with explicit consent
+    category: strategy
+    track: C
+    dependencies: [101]
     status: pending
