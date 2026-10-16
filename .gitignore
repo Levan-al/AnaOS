@@ -34,3 +34,6 @@ Thumbs.db
 # Local vendor blobs
 /vendor/google/
 /vendor/anaos/*/proprietary/
+
+**/.kotlin/
+
