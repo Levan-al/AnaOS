@@ -23,6 +23,14 @@ keys/
 .DS_Store
 Thumbs.db
 
+# Android / Gradle local
+**/local.properties
+**/.gradle/
+**/build/
+*.apk
+*.ap_
+*.dex
+
 # Local vendor blobs
 /vendor/google/
 /vendor/anaos/*/proprietary/
