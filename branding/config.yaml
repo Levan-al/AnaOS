@@ -32,3 +32,4 @@ apps:
   pdfviewer: org.anaos.pdfviewer
   setupwizard: org.anaos.setupwizard
   browser: org.anaos.browser
+  calculator: org.anaos.calculator

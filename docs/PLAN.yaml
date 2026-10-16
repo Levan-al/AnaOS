@@ -394,37 +394,51 @@ tasks:
     title: Deepen storage isolation / scoped storage
     category: isolation
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 47
     title: Granular network permission control
     category: isolation
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 48
     title: Sensors, clipboard, contacts, notifications isolation
     category: isolation
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 49
     title: Improve profile-based isolation
     category: isolation
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 50
     title: Sandboxed Google Play compatibility layer
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/SANDBOXED_PLAY.md
   - id: 51
     title: Own Network Location implementation
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 52
     title: Improved MAC address randomization
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 53
     title: DNS-over-HTTPS / DNS-over-TLS by default
     category: privacy
@@ -437,12 +451,16 @@ tasks:
     title: Metadata stripping system
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 55
     title: Permission auto-reset and idle app hibernation
     category: privacy
     dependencies: [45]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/PRIVACY_CONTROLS.md
   - id: 56
     title: Create Camera app
     category: apps
@@ -510,12 +528,16 @@ tasks:
     title: Create encrypted backup system
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    artifacts:
+      - docs/ENCRYPTED_BACKUP.md
   - id: 65
     title: Create ExactCalculator and minimal utilities
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    artifacts:
+      - apps/ExactCalculator/README.md
   - id: 66
     title: Create own update server architecture
     category: distribution
@@ -558,7 +580,10 @@ tasks:
     title: Create remote attestation server
     category: attestation
     dependencies: [2, 6]
-    status: pending
+    status: in_progress
+    notes: "Architecture draft; blocked on domains/CDN for live deploy."
+    artifacts:
+      - docs/ATTESTATION_SERVER.md
   - id: 74
     title: Full Auditor app integration
     category: attestation
@@ -618,7 +643,10 @@ tasks:
     title: Write security architecture documentation
     category: documentation
     dependencies: [45, 40, 41, 73]
-    status: pending
+    status: in_progress
+    notes: "Draft SECURITY_ARCHITECTURE.md; expand after hardening lands."
+    artifacts:
+      - docs/SECURITY_ARCHITECTURE.md
   - id: 86
     title: Write contribution guidelines
     category: documentation

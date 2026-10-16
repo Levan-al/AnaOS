@@ -35,6 +35,8 @@ Copyright (C) The AnaOS Project
 | Kernel plan | [`docs/KERNEL.md`](docs/KERNEL.md) |
 | Update servers | [`docs/UPDATE_SERVER.md`](docs/UPDATE_SERVER.md) |
 | SELinux hardening | [`docs/SELINUX_HARDENING.md`](docs/SELINUX_HARDENING.md) |
+| Privacy controls | [`docs/PRIVACY_CONTROLS.md`](docs/PRIVACY_CONTROLS.md) |
+| Security architecture | [`docs/SECURITY_ARCHITECTURE.md`](docs/SECURITY_ARCHITECTURE.md) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |
 | AOSP 17 tag shortlist | [`docs/AOSP17_TAG_SHORTLIST.md`](docs/AOSP17_TAG_SHORTLIST.md) |
 | PQC roadmap | [`docs/PQC_ROADMAP.md`](docs/PQC_ROADMAP.md) |

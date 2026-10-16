@@ -32,6 +32,9 @@ jobs:
           test -f docs/SELINUX_HARDENING.md
           test -f docs/UPDATE_SERVER.md
           test -f docs/DNS_PRIVACY.md
+          test -f docs/PRIVACY_CONTROLS.md
+          test -f docs/SECURITY_ARCHITECTURE.md
+          test -f docs/ATTESTATION_SERVER.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f branding/config.yaml
