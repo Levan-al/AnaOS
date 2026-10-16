@@ -441,7 +441,10 @@ tasks:
     title: Create PDF Viewer
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/PdfViewer."
+    artifacts:
+      - apps/PdfViewer/
   - id: 59
     title: Create Auditor app
     category: apps
@@ -464,7 +467,10 @@ tasks:
     title: Create App Store
     category: apps
     dependencies: [13]
-    status: pending
+    status: in_progress
+    notes: "Scaffold at apps/AppStore."
+    artifacts:
+      - apps/AppStore/
   - id: 62
     title: Redesign Setup Wizard
     category: apps

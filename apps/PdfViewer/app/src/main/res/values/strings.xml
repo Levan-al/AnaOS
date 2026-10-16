@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AnaOS PDF Viewer</string>
+    <string name="pdf_scaffold">AnaOS PDF Viewer (scaffold)\nSandboxed view — no upload.</string>
+</resources>

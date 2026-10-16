@@ -25,11 +25,11 @@ only on AnaOS-authored files.
 
 | Repo | Target ID | Package/strings | URLs | SELinux | Done |
 | --- | --- | --- | --- | --- | --- |
-| `platform_packages_apps_Updater` | `org.anaos.updater` | [ ] | [ ] | [ ] | [ ] |
-| `platform_packages_apps_Auditor` | `org.anaos.auditor` | [ ] | [ ] | [ ] | [ ] |
-| `platform_packages_apps_Camera` | `org.anaos.camera` | [ ] | [ ] | [ ] | [ ] |
-| `platform_packages_apps_AppStore` | `org.anaos.appstore` | [ ] | [ ] | [ ] | [ ] |
-| `platform_packages_apps_PdfViewer` | `org.anaos.pdfviewer` | [ ] | [ ] | [ ] | [ ] |
+| `platform_packages_apps_Updater` | `org.anaos.updater` | [x] scaffold | [x] | [ ] | [ ] |
+| `platform_packages_apps_Auditor` | `org.anaos.auditor` | [x] scaffold | [x] | [ ] | [ ] |
+| `platform_packages_apps_Camera` | `org.anaos.camera` | [x] scaffold | n/a | [ ] | [ ] |
+| `platform_packages_apps_AppStore` | `org.anaos.appstore` | [x] scaffold | [x] | [ ] | [ ] |
+| `platform_packages_apps_PdfViewer` | `org.anaos.pdfviewer` | [x] scaffold | n/a | [ ] | [ ] |
 | `platform_packages_apps_SetupWizard` | `org.anaos.setupwizard` | [ ] | [ ] | [ ] | [ ] |
 | `Auditor` (upstream fork) | align or archive | [ ] | [ ] | [ ] | [ ] |
 | `PdfViewer` (upstream fork) | align or archive | [ ] | [ ] | [ ] | [ ] |

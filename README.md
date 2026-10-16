@@ -30,6 +30,8 @@ Copyright (C) The AnaOS Project
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | Status report | [`docs/STATUS_REPORT.md`](docs/STATUS_REPORT.md) |
 | org.anaos rebrand | [`docs/ORG_ANAOS_REBRAND.md`](docs/ORG_ANAOS_REBRAND.md) |
+| Apps scaffolds | [`apps/`](apps/) |
+| Cost ops (Hetzner) | [`docs/COST_OPS.md`](docs/COST_OPS.md) |
 | AOSP 17 playbook | [`docs/AOSP17_ADAPTATION.md`](docs/AOSP17_ADAPTATION.md) |
 | AOSP 17 tag shortlist | [`docs/AOSP17_TAG_SHORTLIST.md`](docs/AOSP17_TAG_SHORTLIST.md) |
 | PQC roadmap | [`docs/PQC_ROADMAP.md`](docs/PQC_ROADMAP.md) |
