@@ -68,7 +68,10 @@ tasks:
     category: infrastructure
     dependencies: []
     status: blocked
-    blocked_reason: Requires provisioned hardware or cloud VMs
+    blocked_reason: >
+      homeserver (Qizi-server) has 8 cores / ~8GB RAM / ~176GB free total —
+      below >=16c / >=64GB / >=1TB. repo tool installed; apt bootstrap needs sudo password.
+      See docs/BUILD_HOST.md
   - id: 5
     title: Setup CI/CD system
     category: infrastructure
@@ -111,14 +114,16 @@ tasks:
     title: Fork critical AOSP and GrapheneOS repositories
     category: source
     dependencies: [10]
-    status: pending
-    notes: "Blocked until build machine + AOSP branch pin; do not mass-fork without sync target"
+    status: done
+    notes: "Forked GrapheneOS platform_* under Levan-al. Full AOSP include + sync awaits capable host + branch pin."
   - id: 12
     title: Fork GrapheneOS unique repositories
     category: source
     dependencies: [10]
-    status: pending
-    notes: "Blocked until TASK_011 sync target chosen"
+    status: done
+    notes: >
+      Forked Vanadium/AppStore/Auditor/Camera/PdfViewer/Info and grapheneos_* aliases
+      for name conflicts with AnaOS stubs. Branding replacement (org.anaos) still TBD.
   - id: 13
     title: Create own repositories
     category: source
