@@ -1,7 +1,7 @@
 # Domain registration plan (TASK_002)
 
-**Status:** blocked / deferred — not required for AOSP bring-up.  
-Register before public OTA, website, or attestation go live.
+**Status:** Phase C template ready — **do not buy until** signed factory path or public download claim.  
+Bring-up does not need DNS. Zone example: `dns/anaos.org.zone.example`.
 
 ## Planned DNS
 

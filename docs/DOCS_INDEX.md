@@ -12,7 +12,8 @@ duplicating long tables.
 | [STATUS_REPORT.md](STATUS_REPORT.md) | Live bring-up status |
 | [PRODUCT_SCOPE.md](PRODUCT_SCOPE.md) | AnaOS vs AI Ops boundary |
 | [COST_OPS.md](COST_OPS.md) | Hetzner / idle billing |
-| [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term bring-up order (execute this) |
+| [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term order (execute this) |
+| [PHASE_C.md](PHASE_C.md) | Post-teardown engineering tracker |
 | [ARTIFACT_PULL.md](ARTIFACT_PULL.md) | Pull images/logs before delete |
 | [AWAY_MODE.md](AWAY_MODE.md) | Unattended overlay finish |
 | [AUTOPILOT.md](AUTOPILOT.md) | Full Phase A–B hands-off |

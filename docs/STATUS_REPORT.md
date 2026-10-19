@@ -1,21 +1,43 @@
 # AnaOS status report
 
-Last updated: **2026-10-19** (Phase B complete — CPX62 deleted).
+Last updated: **2026-10-19** (Phase C started).
 
 ## Verdict
 
-**AnaOS emulator overlay build succeeded.** Artifacts local.  
-**Hetzner `anaos-build` deleted** via Cloud Console (server id `170755575`).  
-SSH to `188.34.189.66` no longer responds.
+Bring-up **closed**: overlay OK, artifacts local, Hetzner deleted, API token revoked.  
+**Phase C active** — air-gap / AOSP17 / shiba / domains / Updater (no cloud keys).
 
-## Bring-up window
+## Phases
 
-| Gate | State |
+| Phase | State |
 | --- | --- |
-| `OVERLAY_BUILD_OK` | Done |
-| Local artifacts | `anaos-emulator-out/` (~5 GB) |
-| CPX62 delete | **Done** |
-| API token `AnaOS-build` | **Revoked** |
-| Next | Phase C offline (air-gap keys, smoke optional) |
+| A — stock + overlay compile | Done |
+| B — pull + teardown | Done |
+| C — next engineering | **In progress** — see [`PHASE_C.md`](PHASE_C.md) |
 
-Plan: [`ROADMAP_NOW.md`](ROADMAP_NOW.md).
+## Phase C deliverables landed this sprint
+
+- `docs/PHASE_C.md`, refreshed `ROADMAP_NOW.md`  
+- `scripts/pack-airgap-kit.sh` (public USB-A pack)  
+- Stronger `check-security-gate.sh`  
+- AOSP17 pin decision log post-bring-up  
+- `dns/anaos.org.zone.example`  
+- Updater: `HostAllowlist`, `UpdateMetadataParser`, `AllowlistedUpdateRepository`  
+- `scripts/verify-emulator-artifacts.sh`  
+- adevtool checklist expanded  
+
+## Local artifacts note
+
+`anaos-emulator-out/`: `super.img` + main partitions present and hash-OK.  
+`system_dlkm.img` alone failed SHA256 vs packed sums (likely truncated scp);  
+host already deleted — prefer boot via `super.img` for smoke.
+
+## Still human / blocked
+
+| Item | Needs |
+| --- | --- |
+| Key ceremony | Offline machine + two people (`out/anaos-airgap-public-*.tar.gz` ready) |
+| AOSP17 sync | New build host + disk |
+| shiba vendor | Factory image + adevtool implementation |
+| Domains | Purchase decision |
+| Emulator UI smoke | Local Android emulator + images |

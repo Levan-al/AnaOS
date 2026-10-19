@@ -45,5 +45,8 @@ TRACK B GATE
 ## Automation (incremental)
 
 - Meta CI: docs + branding presence (`.github/workflows/meta-ci.yml`)  
-- Host: `scripts/check-security-gate.sh` — local/CI smoke for gate file + branding rules  
+- Host / laptop: `bash scripts/check-security-gate.sh` — gate files, branding, Updater hosts, no `.pk8` in tree  
+- PR template: Track B checklist (`.github/pull_request_template.md`)  
 - Full SELinux/AVB checks land with TASK_077 after first device/emulator builds  
+
+Run the smoke script before every promote PR that touches `device/` or platform overlays.

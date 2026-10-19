@@ -8,8 +8,11 @@ Scaffold for TASK_060. Points **only** at AnaOS update servers.
 | --- | --- |
 | `UpdateEndpoints` | Hard-coded `releases.anaos.org` / `dl.anaos.org` |
 | `UpdateChannel` | `stable` / `beta` |
-| `UpdateMetadata` | Future server JSON shape |
-| `UpdateRepository` | Fetch contract; `NoOpUpdateRepository` (no network) |
+| `UpdateMetadata` | Server JSON shape |
+| `UpdateMetadataParser` | Offline JSON parse + host allowlist check |
+| `HostAllowlist` | Only `releases.anaos.org` / `dl.anaos.org` |
+| `UpdateRepository` | Fetch contract; `NoOpUpdateRepository` (default, no network) |
+| `AllowlistedUpdateRepository` | Network-ready shape; still offline unless explicitly enabled |
 | `UpdateSignatureVerifier` | Classical / hybrid PQ verify contract + NoOp stub |
 | `HybridPqSignatureVerifier` | TASK_100 prototype shape (not production-ready) |
 | `BootCompletedReceiver` | Boot hook stub |

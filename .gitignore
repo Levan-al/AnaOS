@@ -17,6 +17,7 @@ keys/
 .env.*
 secrets/
 anaos-emulator-out/
+/out/
 
 # IDE / OS
 .idea/

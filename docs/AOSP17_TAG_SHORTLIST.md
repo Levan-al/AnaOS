@@ -40,3 +40,4 @@ Record resolved manifest commit SHA in `AOSP17_ADAPTATION.md` conflict/pin log a
 | Date (UTC) | Decision | By |
 | --- | --- | --- |
 | 2026-10-16 | P0 staging target = `android-17.0.0_r1` | AnaOS maintainers (meta) |
+| 2026-10-19 | Bring-up on floating `android-latest-release` closed (`BUILD_OK` + overlay OK). Next sync must be **new host** on P0 tag `android-17.0.0_r1` — do not re-open deleted CPX62 for floating tip. | AnaOS maintainers (Phase C) |

@@ -1,78 +1,51 @@
-# Near-term action plan (bring-up window)
+# Near-term action plan
 
-Last updated: **2026-10-19**. Execution order below — do not skip phases.
-Not a substitute for `PLAN.yaml` (full backlog).
-Autopilot: [`AUTOPILOT.md`](AUTOPILOT.md).
+Last updated: **2026-10-19**. Not a substitute for `PLAN.yaml`.
+Autopilot (bring-up): [`AUTOPILOT.md`](AUTOPILOT.md). Phase C tracker: [`PHASE_C.md`](PHASE_C.md).
 
 ## Snapshot
 
 | Gate | State |
 | --- | --- |
-| Stock `BUILD_OK` | Done (2026-10-16) |
-| Overlay lunch | Done (`anaos_emulator-trunk_staging-userdebug`) |
-| Partition fix (3072 MiB) | Done (`79047cd`) |
-| Overlay `m` retry | **Done** — `OVERLAY_BUILD_OK` 2026-10-19T14:22:56Z + `super.img` |
-| Emulator smoke | Optional local (`EMULATOR_SMOKE.md`) |
-| Pull artifacts + **delete CPX62** | Autopilot Phase B (needs `HCLOUD_TOKEN` for delete) |
-| Air-gap / shiba / AOSP17 | Phase C — not fully unattended |
+| Stock `BUILD_OK` | Done |
+| Overlay + `super.img` | Done (`OVERLAY_BUILD_OK`) |
+| Artifacts local | `anaos-emulator-out/` |
+| CPX62 deleted | Done |
+| API token `AnaOS-build` | Revoked |
+| **Phase C** | **Active** |
 
 ---
 
-## Phase A — Now (while `m` runs)
+## Phase A / B — Closed
 
-**Owner:** agent + host automation. **Do not** start a second AOSP sync.
-
-1. Keep `aosp-overlay` + `aosp-overlay-finish` alive  
-2. Poll for `OVERLAY_BUILD_OK` or `OVERLAY_BUILD_FAIL`  
-3. Parallel cheap meta work only (docs, scaffolds, this plan)  
-4. On FAIL → triage log (esp. `super.img` / lpmake); fix; retry once; else stop billing  
-
-**Success signal:** `/opt/anaos/OVERLAY_BUILD_OK` (+ optional `SLEEP_REPORT.txt`)
+Bring-up on Hetzner finished. Do **not** re-rent a build host until AOSP17 pin
+or device work needs it (`COST_OPS.md`).
 
 ---
 
-## Phase B — Immediately after overlay OK
+## Phase C — Next engineering (active)
 
-**Owner:** autopilot (`remote-autopilot` + `local-autopilot.ps1`). **Cost-critical.**
+| Priority | Item | Owner path | Blocked on |
+| --- | --- | --- | --- |
+| P0 | Air-gap key ceremony | `AIRGAP_PRACTICAL.md`, `scripts/pack-airgap-kit.sh` | Physical offline machine + two people |
+| P0 | Track B gate on every promote | `SECURITY_MERGE_GATE.md`, `check-security-gate.sh` | Human ACK on real promote |
+| P1 | AOSP 17 pin `android-17.0.0_r1` | `AOSP17_*` | New build host / disk |
+| P1 | `adevtool` + `shiba` vendor | `adevtool/`, `VENDOR_EXTRACT.md` | Factory image + tool work |
+| P2 | Domains TASK_002 | `DOMAINS.md`, `dns/anaos.org.zone.example` | Purchase decision |
+| P2 | Updater client + CDN | `apps/Updater/`, `ARTIFACT_CDN.md` | Domains + signed metadata |
+| P3 | Browser/WebView | dedicated host only | Separate machine |
 
-1. Markers + packed `/opt/anaos/artifacts-ready`  
-2. Pull to `anaos-emulator-out/` (see `ARTIFACT_PULL.md`)  
-3. **Delete** `anaos-build` via Hetzner API when `HCLOUD_TOKEN` / `secrets/hcloud_token` present  
-4. Revoke build API token when rental ends  
+### This meta sprint (no cloud keys, no new Hetzner)
 
-**Do not** claim device/AVB lock from emulator images alone.
+1. Ceremony prep pack + readiness status  
+2. Stronger Track B automation + PR checklist  
+3. AOSP17 pin decision log post-bring-up  
+4. adevtool / shiba implementation notes  
+5. DNS zone example + Updater offline parser  
 
----
+### Explicit non-goals now
 
-## Phase C — Next engineering (after teardown)
-
-| Priority | Item | Notes |
-| --- | --- | --- |
-| P0 | Air-gap key ceremony | Physical offline — `AIRGAP_PRACTICAL.md` |
-| P0 | Track B security gate on any promote | `SECURITY_MERGE_GATE.md` |
-| P1 | AOSP 17 pin + rebase ledger | `AOSP17_*` docs |
-| P1 | `adevtool` + `shiba` vendor | Blocked on device tree / extract |
-| P2 | Domains (TASK_002) before public OTA | |
-| P2 | Updater real client + CDN | Scaffold exists under `apps/` |
-| P3 | Browser/WebView | Dedicated host only — never beside AOSP on 32G |
-
----
-
-## Explicit non-goals (this window)
-
-- Public website polish  
-- Bug bounty payouts  
-- Chromium on the AOSP rental  
-- Second full tree sync on CPX62  
-- Release signing keys on the cloud host  
-
----
-
-## Decision table
-
-| If… | Then… |
-| --- | --- |
-| `OVERLAY_BUILD_OK` | Phase B → pull → delete |
-| `OVERLAY_BUILD_FAIL` (partition again) | Bump size / fix mk → one retry |
-| `OVERLAY_BUILD_FAIL` (other) | Capture log tail; decide retry vs delete same day |
-| Idle >1h after conclusive OK/FAIL | Delete host (billing) |
+- Re-create CPX62 “just because”  
+- Generate `.pk8` on a networked machine  
+- Claim device lock from emulator images  
+- Chromium beside AOSP on 32G RAM  

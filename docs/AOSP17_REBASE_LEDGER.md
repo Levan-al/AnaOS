@@ -13,13 +13,14 @@ Related: `docs/AOSP17_ADAPTATION.md`, `docs/AOSP17_TAG_SHORTLIST.md`,
 | P0 tag | `android-17.0.0_r1` |
 | Staging branch | `anaos-aosp17-stage` |
 | Release branch | `anaos-aosp17` |
-| Bring-up tree | Hetzner `android-latest-release` until TASK_018 `BUILD_OK` |
-| Re-init | After BUILD_OK + disk check; do not start second full sync on same host |
+| Bring-up tree | Closed — Hetzner `android-latest-release` → `BUILD_OK` + overlay OK (2026-10-19); host deleted |
+| Re-init | **New** build host only; `repo init -b android-17.0.0_r1`; overlay meta @ current `main` |
 
 ## Conflict ledger
 
 | Date (UTC) | Upstream area / path | Conflict summary | Resolution | Track B impact | Owner |
 | --- | --- | --- | --- | --- | --- |
+| 2026-10-19 | bring-up note | Emulator overlay required `BOARD_EMULATOR_DYNAMIC_PARTITIONS_SIZE=3072MiB` on floating tip | Keep override in `anaos_emulator.mk` for 17 pin | partition / product size | meta |
 | — | `bionic` / malloc hooks | _(pending first 17 rebase)_ | | hardened_malloc | |
 | — | `system/sepolicy` | _(pending)_ | | SELinux enforcing | |
 | — | `build/soong` / product config | _(pending)_ | | official.mk / branding | |

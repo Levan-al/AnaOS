@@ -10,9 +10,9 @@ See [`docs/STRATEGY.md`](docs/STRATEGY.md).
 
 ## Status
 
-Stock emulator `BUILD_OK`; AnaOS overlay rebuild retry in progress (2026-10-19).
-Near-term plan: [`docs/ROADMAP_NOW.md`](docs/ROADMAP_NOW.md). Hosting: GitHub under
-[`Levan-al`](https://github.com/Levan-al) (org `AnaOS` deferred).
+Bring-up closed (overlay OK, Hetzner torn down). **Phase C** active —
+[`docs/PHASE_C.md`](docs/PHASE_C.md) / [`docs/ROADMAP_NOW.md`](docs/ROADMAP_NOW.md).
+Hosting: GitHub under [`Levan-al`](https://github.com/Levan-al).
 
 ## Licensing
 

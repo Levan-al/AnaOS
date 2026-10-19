@@ -1,0 +1,34 @@
+; Example authoritative zone for anaos.org (TASK_002).
+; Do NOT publish until domains are purchased and DNSSEC/CAA decided.
+; Replace SERIAL and glue IPs before loading.
+
+$TTL 3600
+@       IN SOA  ns1.anaos.org. security.anaos.org. (
+                        2026101901 ; serial
+                        7200       ; refresh
+                        3600       ; retry
+                        1209600    ; expire
+                        300 )      ; minimum
+
+        IN NS   ns1.anaos.org.
+        IN NS   ns2.anaos.org.
+        IN CAA  0 issue "letsencrypt.org"
+        IN CAA  0 issuewild ";"
+        IN CAA  0 iodef "mailto:security@anaos.org"
+        IN TXT  "v=spf1 -all"
+
+; Apex / www — static site later
+@       IN A    203.0.113.10
+www     IN CNAME anaos.org.
+
+; OTA / downloads (ARTIFACT_CDN.md)
+releases        IN A    203.0.113.20
+dl              IN A    203.0.113.21
+
+; Attestation / apps (future)
+attestation     IN A    203.0.113.22
+apps            IN A    203.0.113.23
+
+; Mail — disclosure only until full mail stack exists
+@       IN MX 10 mail.anaos.org.
+mail    IN A    203.0.113.30
