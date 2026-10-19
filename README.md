@@ -10,7 +10,9 @@ See [`docs/STRATEGY.md`](docs/STRATEGY.md).
 
 ## Status
 
-Foundation + strategy v2.1 in progress. Hosting: GitHub under [`Levan-al`](https://github.com/Levan-al) (org `AnaOS` deferred). See [`docs/PLAN.yaml`](docs/PLAN.yaml) and [`docs/BRANDING.md`](docs/BRANDING.md).
+Stock emulator `BUILD_OK`; AnaOS overlay rebuild retry in progress (2026-10-19).
+Near-term plan: [`docs/ROADMAP_NOW.md`](docs/ROADMAP_NOW.md). Hosting: GitHub under
+[`Levan-al`](https://github.com/Levan-al) (org `AnaOS` deferred).
 
 ## Licensing
 
@@ -33,6 +35,7 @@ Full index: [`docs/DOCS_INDEX.md`](docs/DOCS_INDEX.md).
 | Plan | [`docs/PLAN.yaml`](docs/PLAN.yaml) |
 | Status report | [`docs/STATUS_REPORT.md`](docs/STATUS_REPORT.md) |
 | Near-term roadmap | [`docs/ROADMAP_NOW.md`](docs/ROADMAP_NOW.md) |
+| Artifact pull (pre-delete) | [`docs/ARTIFACT_PULL.md`](docs/ARTIFACT_PULL.md) |
 | org.anaos rebrand | [`docs/ORG_ANAOS_REBRAND.md`](docs/ORG_ANAOS_REBRAND.md) |
 | Apps scaffolds | [`apps/`](apps/) |
 | Cost ops (Hetzner) | [`docs/COST_OPS.md`](docs/COST_OPS.md) |

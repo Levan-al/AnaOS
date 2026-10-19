@@ -204,9 +204,11 @@ tasks:
     dependencies: [17]
     status: in_progress
     notes: >
-      SYNC_OK 2026-10-16T13:26:52Z. Emulator build ~27%+ on Hetzner
-      (sdk_phone64_x86_64-trunk_staging-user); watchdog + 32G swap; BUILD_OK pending.
-      After BUILD_OK: scripts/post-build-overlay.sh. Cost: docs/COST_OPS.md.
+      Stock BUILD_OK 2026-10-16 (sdk_phone64_x86_64-trunk_staging-user).
+      OVERLAY_OK + lunch anaos_emulator-trunk_staging-userdebug.
+      First overlay m failed at super.img (1800MiB group); fixed 3072MiB (79047cd);
+      overlay m retry in progress 2026-10-19. Plan: docs/ROADMAP_NOW.md.
+      After OVERLAY_BUILD_OK: ARTIFACT_PULL.md then COST_OPS delete.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing
