@@ -1,0 +1,8 @@
+{
+  "buildNumber": "2026101901",
+  "channel": "stable",
+  "device": "emulator",
+  "incremental": false,
+  "downloadUrl": "https://evil.example/payload.bin",
+  "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+}

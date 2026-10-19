@@ -1,0 +1,16 @@
+# Cloudflare R2 + Workers / Pages binding example (TASK_006)
+# Copy to wrangler.toml locally — never commit account secrets.
+
+name = "anaos-artifacts"
+compatibility_date = "2026-10-01"
+account_id = "REPLACE_ME"
+
+[[r2_buckets]]
+binding = "ARTIFACTS"
+bucket_name = "anaos-releases"
+
+# Directory layout (object key prefixes):
+#   releases/   — channel metadata + factory images
+#   factory/    — flashable zips
+#   ota/        — full + delta payloads
+#   apps/       — AppStore packages

@@ -1,0 +1,9 @@
+# AnaOS Updater domain stub (TASK_045 / TASK_030)
+# Merged into platform_system_sepolicy after AOSP17 sync — not compiled here.
+
+type anaos_updater, domain;
+type anaos_updater_exec, exec_type, file_type;
+
+# Placeholder: app_domain(anaos_updater) once macros available in tree.
+# Network: neverallow arbitrary sockets; allowlist via network_security_config
+# plus netd rules. Do not add permissive here.

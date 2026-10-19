@@ -1,17 +1,11 @@
-# sepolicy for shiba (TASK_030)
+# shiba SELinux stubs
 
-Device-specific SELinux policy overlays for AnaOS on Pixel 8.
+| File | Role |
+| --- | --- |
+| `private/anaos_updater.te` | Updater domain type |
+| `private/anaos_auditor.te` | Auditor domain type |
+| `private/anaos_camera.te` | Camera domain type |
+| `file_contexts` | priv-app path labels |
 
-## Planned contents
-
-- `private/` — device-private domains / neverallows expansions  
-- `vendor/` — vendor HAL interfaces once blobs exist  
-- `file_contexts` / `property_contexts` deltas as needed  
-
-## Rules
-
-- Base hardening stays in `platform_system_sepolicy` (TASK_045).  
-- No permissive domains in official `user` builds.  
-- Updater / Auditor domains land with app packaging (TASK_045 / TASK_060).  
-
-Populate after vendor extract (TASK_029).
+These **do not compile** in the meta repo. Copy into `device/google/shiba-sepolicy`
+or `system/sepolicy` after AOSP17 + adevtool extract. See `docs/SELINUX_APP_DOMAINS.md`.

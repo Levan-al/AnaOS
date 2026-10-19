@@ -1,0 +1,9 @@
+{
+  "buildNumber": "2026101901",
+  "channel": "stable",
+  "device": "emulator",
+  "incremental": false,
+  "downloadUrl": "https://dl.anaos.org/ota/emulator/2026101901/payload.bin",
+  "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "minBuildNumber": "2026100100"
+}

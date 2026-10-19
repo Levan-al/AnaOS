@@ -22,7 +22,24 @@ class AllowlistedUpdateRepository(
         require(HostAllowlist.isAllowedUrl(url)) { "metadata URL not allowlisted" }
         val json = fetchMetadataJson.invoke(url)
         val meta = UpdateMetadataParser.parse(json, channel)
-        if (meta.buildNumber == currentBuild) return null
+        if (!BuildNumber.isNewer(meta.buildNumber, currentBuild)) return null
+        val min = meta.minBuildNumber
+        if (min != null && !BuildNumber.isAtLeast(currentBuild, min)) {
+            throw IllegalStateException(
+                "rollback/minBuild blocked: current=$currentBuild min=$min",
+            )
+        }
         return meta
+    }
+
+    companion object {
+        /** Offline default. Wire [HttpsMetadataFetcher]::fetch only after domains + signing. */
+        fun productionOffline(): AllowlistedUpdateRepository = AllowlistedUpdateRepository()
+
+        fun withHttps(networkEnabled: Boolean): AllowlistedUpdateRepository =
+            AllowlistedUpdateRepository(
+                networkEnabled = networkEnabled,
+                fetchMetadataJson = HttpsMetadataFetcher::fetch,
+            )
     }
 }

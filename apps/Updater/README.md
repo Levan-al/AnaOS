@@ -13,10 +13,15 @@ Scaffold for TASK_060. Points **only** at AnaOS update servers.
 | `HostAllowlist` | Only `releases.anaos.org` / `dl.anaos.org` |
 | `UpdateRepository` | Fetch contract; `NoOpUpdateRepository` (default, no network) |
 | `AllowlistedUpdateRepository` | Network-ready shape; still offline unless explicitly enabled |
+| `HttpsMetadataFetcher` | HTTPS GET (allowlist-gated); not wired in production default |
+| `BuildNumber` | Lexicographic compare + minBuild / upgrade checks |
 | `UpdateSignatureVerifier` | Classical / hybrid PQ verify contract + NoOp stub |
 | `HybridPqSignatureVerifier` | TASK_100 prototype shape (not production-ready) |
 | `BootCompletedReceiver` | Boot hook stub |
 | `network_security_config.xml` | Cleartext denied; AnaOS domains only |
+| `assets/fixtures/` | Offline parse self-test in MainActivity |
+
+Repo fixtures + CI: `fixtures/ota/`, `scripts/validate_update_metadata.py`.
 
 ## Planned features
 

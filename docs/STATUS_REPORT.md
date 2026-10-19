@@ -1,11 +1,11 @@
 # AnaOS status report
 
-Last updated: **2026-10-19** (Phase C started).
+Last updated: **2026-10-19** (Phase D gap-close).
 
 ## Verdict
 
-Bring-up **closed**: overlay OK, artifacts local, Hetzner deleted, API token revoked.  
-**Phase C active** — air-gap / AOSP17 / shiba / domains / Updater (no cloud keys).
+Bring-up **closed**. Phase C prep **closed**. **Phase D active** — executable
+gap-report items landed in meta (tests green). Still **not** a signed Pixel image.
 
 ## Phases
 
@@ -13,31 +13,31 @@ Bring-up **closed**: overlay OK, artifacts local, Hetzner deleted, API token rev
 | --- | --- |
 | A — stock + overlay compile | Done |
 | B — pull + teardown | Done |
-| C — next engineering | **In progress** — see [`PHASE_C.md`](PHASE_C.md) |
+| C — air-gap / pin / gate prep | Done |
+| D — gap-close (meta) | **In progress** — see [`PHASE_D.md`](PHASE_D.md) |
 
-## Phase C deliverables landed this sprint
+## Phase D landed
 
-- `docs/PHASE_C.md`, refreshed `ROADMAP_NOW.md`  
-- `scripts/pack-airgap-kit.sh` (public USB-A pack)  
-- Stronger `check-security-gate.sh`  
-- AOSP17 pin decision log post-bring-up  
-- `dns/anaos.org.zone.example`  
-- Updater: `HostAllowlist`, `UpdateMetadataParser`, `AllowlistedUpdateRepository`  
-- `scripts/verify-emulator-artifacts.sh`  
-- adevtool checklist expanded  
-
-## Local artifacts note
-
-`anaos-emulator-out/`: `super.img` + main partitions present and hash-OK.  
-`system_dlkm.img` alone failed SHA256 vs packed sums (likely truncated scp);  
-host already deleted — prefer boot via `super.img` for smoke.
+- `ACTION_PLAN_PHASE_D.md` + `PHASE_D.md`  
+- Honest `PLAN.yaml` demotions + fixed `BUILD_HOST.md` (host deleted)  
+- Updater: `BuildNumber`, `HttpsMetadataFetcher`, asset fixture self-test  
+- `fixtures/ota/` + `validate_update_metadata.py` + mock server  
+- `adevtool/adevtool.py` CLI + unit tests  
+- shiba `sepolicy/*.te` + `init.anaos.rc`  
+- `website/` static scaffold + `infra/cdn/` templates  
+- `kernel/manifests/` example + `pin-android-17.0.0_r1.xml`  
+- meta-ci runs OTA + adevtool tests  
 
 ## Still human / blocked
 
 | Item | Needs |
 | --- | --- |
-| Key ceremony | Offline machine + two people (`out/anaos-airgap-public-*.tar.gz` ready) |
+| Key ceremony | Offline machine + two people |
 | AOSP17 sync | New build host + disk |
-| shiba vendor | Factory image + adevtool implementation |
+| shiba vendor extract | Local factory image + full adevtool |
 | Domains | Purchase decision |
-| Emulator UI smoke | Local Android emulator + images |
+| Signed factory / VB green | Ceremony + device flash |
+
+## Local artifacts
+
+`anaos-emulator-out/`: overlay OK from bring-up. Prefer `super.img` for smoke.

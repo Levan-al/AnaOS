@@ -1,13 +1,14 @@
 # adevtool implementation checklist (TASK_027 / TASK_029)
 
-Phase C — after emulator bring-up. First SKU: **Pixel 8 (`shiba`)**.
+Phase D scaffold landed; full extract still needs factory image. First SKU: **Pixel 8 (`shiba`)**.
 
 ## Tooling
 
-- [ ] Decide: extend `grapheneos_adevtool` fork vs greenfield CLI  
-- [ ] Package as reproducible Go/Python tool under `adevtool/` (this repo) + GitHub `Levan-al/adevtool`  
-- [ ] CI lint + unit tests for path rewrite / hash inventory  
-- [ ] CLI subcommands (target shape): `fetch`, `extract`, `generate-device`, `verify-hashes`  
+- [x] Decide: greenfield Python CLI in meta + keep GrapheneOS fork as reference  
+- [x] Package under `adevtool/adevtool.py` (meta) — mirror to GitHub `Levan-al/adevtool` later  
+- [x] Unit tests for fetch allowlist / verify-hashes / extract missing-image  
+- [x] CLI subcommands: `list-devices`, `fetch` (dry-run), `extract` (plan), `verify-hashes`  
+- [ ] `generate-device` + real blob unpack (needs factory zip)
 
 ## First SKU: Pixel 8 (`shiba`)
 

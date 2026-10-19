@@ -22,6 +22,19 @@ in Updater — never third-party app stores.
 6. **Factory/OTA pipeline** — offline sign → upload (`FACTORY_IMAGE.md`)  
 7. **Rollback** — `ROLLBACK_PROTECTION.md`  
 
+## Fixtures (Phase D)
+
+| Path | Role |
+| --- | --- |
+| `fixtures/ota/stable/emulator/metadata.json` | Valid sample |
+| `fixtures/ota/stable/emulator/metadata.bad-host.json` | Must reject |
+| `fixtures/ota/stable/emulator/metadata.channel-mismatch.json` | Must reject |
+
+```bash
+python3 scripts/validate_update_metadata.py fixtures/ota/stable/emulator/metadata.json --channel stable
+python3 scripts/mock_ota_metadata_server.py --port 8765
+```
+
 ## Metadata schema (draft)
 
 Aligns with Updater `UpdateMetadata`:

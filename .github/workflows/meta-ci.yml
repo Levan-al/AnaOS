@@ -49,6 +49,15 @@ jobs:
           test -f device/anaos/common/official.mk
       - name: Track B security gate smoke
         run: bash scripts/check-security-gate.sh
+      - name: OTA metadata fixtures
+        run: |
+          python3 scripts/validate_update_metadata.py fixtures/ota/stable/emulator/metadata.json --channel stable
+          python3 scripts/validate_update_metadata.py fixtures/ota/stable/emulator/metadata.bad-host.json --channel stable --expect-fail
+          python3 scripts/validate_update_metadata.py fixtures/ota/stable/emulator/metadata.channel-mismatch.json --channel stable --expect-fail
+          python3 -m unittest discover -s scripts -p 'test_validate_update_metadata.py' -v
+      - name: adevtool unit tests
+        working-directory: adevtool
+        run: python3 -m unittest discover -s . -p 'test_*.py' -v
       - name: Validate branding config
         run: |
           python3 - <<'PY'
@@ -59,3 +68,11 @@ jobs:
           assert data["project_name"] == "AnaOS", data
           print("branding/config.yaml OK")
           PY
+      - name: Website scaffold present
+        run: |
+          test -f website/index.html
+          test -f website/styles.css
+          test -f infra/cdn/r2.wrangler.toml.example
+          test -f device/anaos/shiba/sepolicy/private/anaos_updater.te
+          test -f platform_manifest/pin-android-17.0.0_r1.xml
+          test -f docs/PHASE_D.md

@@ -1,0 +1,4 @@
+# AnaOS Camera domain stub — no network by default (TASK_056)
+
+type anaos_camera, domain;
+type anaos_camera_exec, exec_type, file_type;

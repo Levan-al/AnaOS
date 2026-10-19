@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Example kernel manifest for Pixel 8 (shiba) — TASK_034 / TASK_039.
+  Not synced from meta. When kernel trees exist under Levan-al, copy to a
+  dedicated kernel workspace and pin tags matching android-17.0.0_r1.
+-->
+<manifest>
+  <remote name="aosp" fetch="https://android.googlesource.com/" />
+  <remote name="anaos" fetch="https://github.com/Levan-al" />
+
+  <default revision="android-anaos-17" remote="anaos" sync-j="4" />
+
+  <project path="common" name="kernel_common" remote="anaos" />
+  <project path="private/devices/google/shiba" name="kernel_devices_google_shiba" remote="anaos" />
+  <project path="private/google-modules" name="kernel_google-modules" remote="anaos" />
+</manifest>

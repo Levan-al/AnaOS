@@ -1,0 +1,6 @@
+# AnaOS shiba file_contexts stubs (TASK_030)
+# Paths are placeholders until packages land under /system/priv-app.
+
+/system/priv-app/AnaUpdater(/.*)?          u:object_r:anaos_updater_exec:s0
+/system/priv-app/AnaAuditor(/.*)?          u:object_r:anaos_auditor_exec:s0
+/system/priv-app/AnaCamera(/.*)?           u:object_r:anaos_camera_exec:s0

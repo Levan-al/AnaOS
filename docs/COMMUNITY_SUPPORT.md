@@ -2,6 +2,16 @@
 
 Blocked on public site/domains for branded channels; bootstrap on GitHub now.
 
+## Chosen stack (Phase D)
+
+| Priority | Platform | Why |
+| --- | --- | --- |
+| Now | GitHub Issues (+ Discussions when enabled) | Zero cost, already live |
+| Next (self-host) | **Matrix / Element** | Federated, E2E, free self-host |
+| Alt | Bonfire or Nodyx | Only if Matrix ops cost too high |
+
+Do not stand up Discord. Do not advertise Matrix rooms until `anaos.org` DNS exists.
+
 ## Community (near-term)
 
 | Channel | Use |
@@ -9,6 +19,7 @@ Blocked on public site/domains for branded channels; bootstrap on GitHub now.
 | GitHub Issues | Bugs / features (templates exist) |
 | GitHub Discussions | Q&A when enabled on meta repo |
 | SECURITY.md | Vulnerability reports only |
+| Matrix (planned) | `#anaos:matrix.org` or self-hosted — after domains |
 
 ## Enterprise (later)
 

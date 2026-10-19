@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  AOSP release pin sidecar (TASK_010 / TASK_017).
+  On the next build host:
+
+    repo init -u https://android.googlesource.com/platform/manifest \
+      -b android-17.0.0_r1
+    # then overlay AnaOS default.xml projects / local manifest
+
+  Do not use floating tip for release-eligible builds.
+-->
+<manifest>
+  <remote name="aosp"
+          fetch="https://android.googlesource.com"
+          review="https://android-review.googlesource.com/" />
+
+  <!-- When ready, include full AOSP via upstream pin, e.g.:
+  <include name="default.xml" />
+  -->
+
+  <default revision="android-17.0.0_r1" remote="aosp" sync-j="4" />
+
+  <project path="build/make" name="platform/build" remote="aosp" revision="android-17.0.0_r1" />
+  <project path="build/soong" name="platform/build_soong" remote="aosp" revision="android-17.0.0_r1" />
+</manifest>

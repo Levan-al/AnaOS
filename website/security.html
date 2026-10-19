@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security — AnaOS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <article class="page">
+    <a class="back" href="index.html">← AnaOS</a>
+    <h1>Security model (summary)</h1>
+    <p>
+      Verified boot (green), offline release keys, SELinux enforcing,
+      hardened_malloc, and optional hardware attestation. Full threat model:
+      <code>docs/SECURITY_ARCHITECTURE.md</code> and <code>docs/THREAT_MODEL_ANDROID17.md</code>.
+    </p>
+    <p>
+      Report vulnerabilities via <code>SECURITY.md</code>. Private keys are never
+      stored on build hosts.
+    </p>
+  </article>
+</body>
+</html>

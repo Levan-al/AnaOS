@@ -15,6 +15,8 @@ duplicating long tables.
 | [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term order (execute this) |
 | [PHASE_C.md](PHASE_C.md) | Post-teardown engineering tracker |
 | [PLAN_V2_GAP_REPORT.md](PLAN_V2_GAP_REPORT.md) | Optimized Plan v2.0 vs reality audit |
+| [PHASE_D.md](PHASE_D.md) | Gap-close tracker (active) |
+| [ACTION_PLAN_PHASE_D.md](ACTION_PLAN_PHASE_D.md) | Phase D execution checklist |
 | [ARTIFACT_PULL.md](ARTIFACT_PULL.md) | Pull images/logs before delete |
 | [AWAY_MODE.md](AWAY_MODE.md) | Unattended overlay finish |
 | [AUTOPILOT.md](AUTOPILOT.md) | Full Phase A–B hands-off |

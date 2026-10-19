@@ -1,7 +1,8 @@
 # Near-term action plan
 
 Last updated: **2026-10-19**. Not a substitute for `PLAN.yaml`.
-Autopilot (bring-up): [`AUTOPILOT.md`](AUTOPILOT.md). Phase C tracker: [`PHASE_C.md`](PHASE_C.md).
+Phase D: [`PHASE_D.md`](PHASE_D.md) · [`ACTION_PLAN_PHASE_D.md`](ACTION_PLAN_PHASE_D.md).  
+Gap audit: [`PLAN_V2_GAP_REPORT.md`](PLAN_V2_GAP_REPORT.md).
 
 ## Snapshot
 
@@ -12,38 +13,43 @@ Autopilot (bring-up): [`AUTOPILOT.md`](AUTOPILOT.md). Phase C tracker: [`PHASE_C
 | Artifacts local | `anaos-emulator-out/` |
 | CPX62 deleted | Done |
 | API token `AnaOS-build` | Revoked |
-| **Phase C** | **Active** |
+| Phase C prep | Done (air-gap pack, gate, pin log) |
+| **Phase D** | **Active** — gap-close in meta |
 
 ---
 
-## Phase A / B — Closed
+## Phase A / B / C — Closed or absorbed
 
-Bring-up on Hetzner finished. Do **not** re-rent a build host until AOSP17 pin
-or device work needs it (`COST_OPS.md`).
+Bring-up finished; Phase C meta prep landed. Do **not** re-rent a build host
+until AOSP17 pin or device work needs it (`COST_OPS.md`).
 
 ---
 
-## Phase C — Next engineering (active)
+## Phase D — Gap-close (active)
 
-| Priority | Item | Owner path | Blocked on |
-| --- | --- | --- | --- |
-| P0 | Air-gap key ceremony | `AIRGAP_PRACTICAL.md`, `scripts/pack-airgap-kit.sh` | Physical offline machine + two people |
-| P0 | Track B gate on every promote | `SECURITY_MERGE_GATE.md`, `check-security-gate.sh` | Human ACK on real promote |
-| P1 | AOSP 17 pin `android-17.0.0_r1` | `AOSP17_*` | New build host / disk |
-| P1 | `adevtool` + `shiba` vendor | `adevtool/`, `VENDOR_EXTRACT.md` | Factory image + tool work |
-| P2 | Domains TASK_002 | `DOMAINS.md`, `dns/anaos.org.zone.example` | Purchase decision |
-| P2 | Updater client + CDN | `apps/Updater/`, `ARTIFACT_CDN.md` | Domains + signed metadata |
-| P3 | Browser/WebView | dedicated host only | Separate machine |
+| ID | Item | Exit |
+| --- | --- | --- |
+| D1 | Honest PLAN + BUILD_HOST | Statuses match evidence |
+| D2 | Updater fixtures + validator | meta-ci green |
+| D3 | adevtool CLI | unittest green |
+| D4 | shiba sepolicy/init stubs | `.te` + `init.anaos.rc` |
+| D5 | CDN templates + website | `infra/cdn`, `website/` |
+| D6 | Kernel manifest example | `kernel/manifests/` |
+| D7 | AOSP17 pin sidecar | `pin-android-17.0.0_r1.xml` |
+| D8 | Gate + docs + canvas | ROADMAP + gap canvas |
 
-### This meta sprint (no cloud keys, no new Hetzner)
+### Still human / blocked
 
-1. Ceremony prep pack + readiness status  
-2. Stronger Track B automation + PR checklist  
-3. AOSP17 pin decision log post-bring-up  
-4. adevtool / shiba implementation notes  
-5. DNS zone example + Updater offline parser  
+| Priority | Item | Blocked on |
+| --- | --- | --- |
+| P0 | Air-gap key ceremony | Offline machine + two people |
+| P0 | Track B ACK on promote | Human |
+| P1 | AOSP17 host sync | New rental / disk |
+| P1 | adevtool extract blobs | Local Pixel factory image |
+| P2 | Domains TASK_002 | Purchase |
+| P3 | Browser/WebView | Separate machine |
 
-### Explicit non-goals now
+### Explicit non-goals
 
 - Re-create CPX62 “just because”  
 - Generate `.pk8` on a networked machine  

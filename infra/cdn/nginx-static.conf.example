@@ -1,0 +1,23 @@
+# Optional self-hosted static CDN front (TASK_006)
+# TLS via Let's Encrypt; put behind Cloudflare proxy when domains exist.
+
+server {
+    listen 443 ssl http2;
+    server_name dl.anaos.org releases.anaos.org;
+
+    # ssl_certificate / ssl_certificate_key filled by certbot
+
+    root /var/www/anaos-artifacts;
+    autoindex off;
+
+    location / {
+        try_files $uri =404;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    }
+
+    location /ota/ {
+        # Large payloads; prefer R2/object storage in production
+        alias /var/www/anaos-artifacts/ota/;
+    }
+}

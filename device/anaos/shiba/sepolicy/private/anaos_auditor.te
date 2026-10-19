@@ -1,0 +1,4 @@
+# AnaOS Auditor domain stub (TASK_045 / TASK_059)
+
+type anaos_auditor, domain;
+type anaos_auditor_exec, exec_type, file_type;

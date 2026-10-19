@@ -1,23 +1,24 @@
 # AnaOS Optimized Plan v2.0 — Gap Report
 
-**Date:** 2026-10-19  
+**Date:** 2026-10-19 (updated after Phase D)  
 **Scope:** TASK_001–093 vs meta repo evidence  
-**Also:** Cursor canvas `AnaOS-Plan-v2-Gap-Report.canvas.tsx`
+**Also:** Cursor canvas `AnaOS-Plan-v2-Gap-Report.canvas.tsx`  
+**Action plan:** [`PHASE_D.md`](PHASE_D.md) · [`ACTION_PLAN_PHASE_D.md`](ACTION_PLAN_PHASE_D.md)
 
 ## Verdict
 
-Roughly **18–22%** of the 93-task Optimized Plan is truly done. The meta repo is a
-strong documentation + bootstrap scaffold with a **real emulator overlay compile**
-(`OVERLAY_BUILD_OK` 2026-10-19) and Phase C prep. It is **not** near a signed Pixel
-image.
+Roughly **22–28%** of the 93-task Optimized Plan is truly done after Phase D
+gap-close (fixtures, adevtool CLI, sepolicy stubs, website/CDN templates, honest
+PLAN statuses). Still **not** near a signed Pixel image — ceremony / AOSP17 host /
+vendor extract remain human-blocked.
 
-| Status | Count |
+| Status | Count (est.) |
 | --- | ---: |
-| done | 8 |
-| partial | 24 |
-| stub_docs | 48 |
+| done | 9 |
+| partial | 28 |
+| stub_docs | 40 |
 | blocked | 4 |
-| not_started | 9 |
+| not_started | 12 |
 
 ## Bucket estimates (% done)
 

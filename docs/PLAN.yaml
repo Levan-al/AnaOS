@@ -114,8 +114,8 @@ tasks:
     title: Prepare signing infrastructure
     category: security
     dependencies: []
-    status: done
-    notes: "Option A docs complete; offline key generation still pending (TASK_019+)."
+    status: in_progress
+    notes: "Option A + air-gap pack ready; ceremony not run (correct). Demoted from done in Phase D audit."
     artifacts:
       - docs/SIGNING_INFRASTRUCTURE.md
       - docs/KEY_CEREMONY.md
@@ -143,7 +143,7 @@ tasks:
     title: Create platform_manifest
     category: source
     dependencies: [3]
-    status: done
+    status: in_progress
     artifacts:
       - https://github.com/Levan-al/platform_manifest
       - platform_manifest/default.xml
@@ -171,13 +171,13 @@ tasks:
     title: Create branding injection system
     category: source
     dependencies: [13]
-    status: done
+    status: in_progress
     notes: "Published https://github.com/Levan-al/branding — final artwork/RRO still placeholders"
   - id: 15
     title: Rewrite product makefiles
     category: source
     dependencies: [14]
-    status: done
+    status: in_progress
     artifacts:
       - device/anaos/common/
       - device/anaos/emulator/
@@ -185,7 +185,7 @@ tasks:
     title: Adapt OFFICIAL_BUILD logic
     category: source
     dependencies: [15]
-    status: done
+    status: in_progress
     artifacts:
       - device/anaos/common/official.mk
     notes: "Stub ready; wire into frameworks after AOSP tree sync."
@@ -336,7 +336,7 @@ tasks:
     title: Create own kernel trees
     category: kernel
     dependencies: [10]
-    status: in_progress
+    status: pending
     notes: "KERNEL.md plan for shiba; repos not created yet."
     artifacts:
       - docs/KERNEL.md
@@ -344,7 +344,7 @@ tasks:
     title: Integrate kernel hardening patches
     category: kernel
     dependencies: [34]
-    status: in_progress
+    status: pending
     notes: "Checklist in KERNEL.md; blocked on repo pins."
     artifacts:
       - docs/KERNEL.md
@@ -352,35 +352,35 @@ tasks:
     title: Enable Memory Tagging Extension (MTE)
     category: kernel
     dependencies: [35]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/KERNEL.md
   - id: 37
     title: Implement USB-C port control and hardware kill-switches
     category: kernel
     dependencies: [35]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/KERNEL.md
   - id: 38
     title: Implement firmware verified loading pipeline
     category: kernel
     dependencies: [35]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/KERNEL.md
   - id: 39
     title: Create automatic kernel prebuilts build system
     category: kernel
     dependencies: [34]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/KERNEL.md
   - id: 40
     title: Full hardened_malloc integration
     category: memory_safety
     dependencies: [11, 12]
-    status: in_progress
+    status: pending
     notes: "Integration checklist drafted; wire after TASK_018 + tree overlay."
     artifacts:
       - docs/HARDENED_MALLOC.md
@@ -388,7 +388,7 @@ tasks:
     title: Enable Control Flow Integrity (CFI)
     category: memory_safety
     dependencies: [11]
-    status: in_progress
+    status: pending
     notes: "Policy doc landed; device validation after shiba/user builds."
     artifacts:
       - docs/CFI_AND_SCS.md
@@ -396,28 +396,28 @@ tasks:
     title: Enable Shadow Call Stack / Pointer Authentication
     category: memory_safety
     dependencies: [41]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/CFI_AND_SCS.md
   - id: 43
     title: Enable integer overflow and bounds checking
     category: memory_safety
     dependencies: [11]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/MEMORY_SAFETY.md
   - id: 44
     title: Restrict dynamic code loading and exec-spawning
     category: memory_safety
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/MEMORY_SAFETY.md
   - id: 45
     title: Maximum SELinux policy hardening
     category: isolation
     dependencies: [11]
-    status: in_progress
+    status: pending
     notes: "Hardening checklist + app domain map; policy code after overlay."
     artifacts:
       - docs/SELINUX_HARDENING.md
@@ -426,42 +426,42 @@ tasks:
     title: Deepen storage isolation / scoped storage
     category: isolation
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 47
     title: Granular network permission control
     category: isolation
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 48
     title: Sensors, clipboard, contacts, notifications isolation
     category: isolation
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 49
     title: Improve profile-based isolation
     category: isolation
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 50
     title: Sandboxed Google Play compatibility layer
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/SANDBOXED_PLAY.md
   - id: 51
     title: Own Network Location implementation
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     notes: "Policy draft; provider package not started."
     artifacts:
       - docs/NETWORK_LOCATION.md
@@ -470,14 +470,14 @@ tasks:
     title: Improved MAC address randomization
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 53
     title: DNS-over-HTTPS / DNS-over-TLS by default
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     notes: "Policy draft; product overlay after TASK_018."
     artifacts:
       - docs/DNS_PRIVACY.md
@@ -485,14 +485,14 @@ tasks:
     title: Metadata stripping system
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 55
     title: Permission auto-reset and idle app hibernation
     category: privacy
     dependencies: [45]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/PRIVACY_CONTROLS.md
   - id: 56
@@ -584,7 +584,7 @@ tasks:
     title: Create own update server architecture
     category: distribution
     dependencies: [2, 6]
-    status: in_progress
+    status: pending
     notes: "Architecture draft; blocked on domains (002) + CDN (006) for live hosting."
     artifacts:
       - docs/UPDATE_SERVER.md
@@ -592,7 +592,7 @@ tasks:
     title: Support delta updates
     category: distribution
     dependencies: [66]
-    status: in_progress
+    status: pending
     notes: "Design doc; enable after two full signed releases."
     artifacts:
       - docs/DISTRIBUTION.md
@@ -601,7 +601,7 @@ tasks:
     title: Implement staged rollout mechanism
     category: distribution
     dependencies: [66]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/DISTRIBUTION.md
       - docs/STAGED_ROLLOUT.md
@@ -609,14 +609,14 @@ tasks:
     title: Automatic factory images and OTA generation pipeline
     category: distribution
     dependencies: [25, 66]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/DISTRIBUTION.md
   - id: 70
     title: Create WebUSB installer
     category: distribution
     dependencies: [66]
-    status: in_progress
+    status: pending
     notes: "Architecture draft; implementation after CLI path."
     artifacts:
       - docs/DISTRIBUTION.md
@@ -625,7 +625,7 @@ tasks:
     title: Create CLI installer and documentation
     category: distribution
     dependencies: [66]
-    status: in_progress
+    status: pending
     notes: "Interface + safety docs; script not shipped yet."
     artifacts:
       - docs/DISTRIBUTION.md
@@ -634,7 +634,7 @@ tasks:
     title: Ensure rollback protection
     category: distribution
     dependencies: [66]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/DISTRIBUTION.md
       - docs/ROLLBACK_PROTECTION.md
@@ -642,7 +642,7 @@ tasks:
     title: Create remote attestation server
     category: attestation
     dependencies: [2, 6]
-    status: in_progress
+    status: pending
     notes: "Architecture draft; blocked on domains/CDN for live deploy."
     artifacts:
       - docs/ATTESTATION_SERVER.md
@@ -679,7 +679,7 @@ tasks:
     title: Setup continuous fuzzing system
     category: testing
     dependencies: [34, 11]
-    status: in_progress
+    status: pending
     artifacts:
       - docs/TESTING.md
   - id: 79
@@ -708,7 +708,7 @@ tasks:
     title: Launch bug bounty program
     category: testing
     dependencies: [8]
-    status: in_progress
+    status: pending
     notes: "Process outlined; launch after public release channel."
     artifacts:
       - docs/TESTING.md
@@ -800,7 +800,7 @@ tasks:
     title: Setup community and enterprise support channels
     category: longterm
     dependencies: [89]
-    status: in_progress
+    status: pending
     notes: "Draft; branded channels blocked on public site/domains."
     artifacts:
       - docs/LONGTERM_OPS.md

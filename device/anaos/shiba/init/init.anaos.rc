@@ -1,0 +1,10 @@
+# AnaOS shiba init hooks (TASK_030) — stub until vendor extract fills real nodes.
+# Included from device BoardConfig / device.mk after AOSP overlay.
+
+on early-init
+    # Placeholder: mkdir for AnaOS runtime state (no network daemons here)
+    mkdir /data/misc/anaos 0700 system system
+
+on property:sys.boot_completed=1
+    # Updater checks are app-driven; do not start privileged network services.
+    setprop ro.anaos.init.stub 1

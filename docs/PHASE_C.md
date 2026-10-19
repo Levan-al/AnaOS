@@ -1,17 +1,18 @@
 # Phase C execution tracker
 
-Started: **2026-10-19** (after Hetzner teardown).
+Started: **2026-10-19** (after Hetzner teardown).  
+**Superseded for active work by [`PHASE_D.md`](PHASE_D.md)** — keep as historical prep log.
 
 ## Progress
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Air-gap prep (no private keys) | in_progress | `scripts/pack-airgap-kit.sh`, kit checklist below |
-| Track B gate automation | in_progress | `scripts/check-security-gate.sh` + PR template |
+| Air-gap prep (no private keys) | ready | `scripts/pack-airgap-kit.sh` — ceremony still human |
+| Track B gate automation | ready | `scripts/check-security-gate.sh` + PR template |
 | AOSP17 pin decision | ready | P0 = `android-17.0.0_r1` — needs new host to sync |
-| adevtool / shiba | scaffold | `adevtool/CHECKLIST.md` expanded |
+| adevtool / shiba | Phase D CLI | `adevtool/adevtool.py` + sepolicy stubs |
 | Domains | template ready | `dns/anaos.org.zone.example` — buy later |
-| Updater client | scaffold+ | metadata parser + host allowlist (offline) |
+| Updater client | Phase D+ | fixtures + validator + HTTPS fetcher (offline default) |
 | Browser/WebView | deferred | P3 |
 
 ## Air-gap readiness (human)
