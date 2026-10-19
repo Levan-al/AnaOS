@@ -1,30 +1,20 @@
 # AnaOS status report
 
-Last updated: **2026-10-19** (Phase A done; Phase B pull done; delete awaiting token).
+Last updated: **2026-10-19** (Phase B complete — CPX62 deleted).
 
 ## Verdict
 
-**AnaOS emulator overlay build succeeded** (`OVERLAY_BUILD_OK` 2026-10-19T14:22:56Z).  
-Artifacts pulled to `anaos-emulator-out/` (`super.img` ~3.1G + component imgs).  
-**Hetzner delete blocked** until `HCLOUD_TOKEN` or `secrets/hcloud_token` is present.
+**AnaOS emulator overlay build succeeded.** Artifacts local.  
+**Hetzner `anaos-build` deleted** via Cloud Console (server id `170755575`).  
+SSH to `188.34.189.66` no longer responds.
 
-## Autopilot
+## Bring-up window
 
-| Piece | State |
+| Gate | State |
 | --- | --- |
-| `aosp-autopilot` (server) | Packed `/opt/anaos/artifacts-ready` |
-| Local 5m loop | Armed (`AGENT_LOOP_TICK_anaos_autopilot`) |
-| `local-autopilot.ps1` | Pull done; delete pending token |
+| `OVERLAY_BUILD_OK` | Done |
+| Local artifacts | `anaos-emulator-out/` (~5 GB) |
+| CPX62 delete | **Done** |
+| Next | Phase C offline (air-gap keys, smoke optional) |
 
-## Live infra
-
-| Item | State |
-| --- | --- |
-| Host | Still billing until delete |
-| Overlay | **OK** |
-| Local out | `anaos-emulator-out/` + `PULL_OK.txt` |
-
-## Next (auto when token appears)
-
-1. Delete `anaos-build` via API  
-2. Phase C remains offline (air-gap keys — not cloud-automatable)  
+Plan: [`ROADMAP_NOW.md`](ROADMAP_NOW.md).
