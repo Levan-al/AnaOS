@@ -14,6 +14,7 @@ duplicating long tables.
 | [COST_OPS.md](COST_OPS.md) | Hetzner / idle billing |
 | [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term order (execute this) |
 | [PHASE_C.md](PHASE_C.md) | Post-teardown engineering tracker |
+| [PLAN_V2_GAP_REPORT.md](PLAN_V2_GAP_REPORT.md) | Optimized Plan v2.0 vs reality audit |
 | [ARTIFACT_PULL.md](ARTIFACT_PULL.md) | Pull images/logs before delete |
 | [AWAY_MODE.md](AWAY_MODE.md) | Unattended overlay finish |
 | [AUTOPILOT.md](AUTOPILOT.md) | Full Phase A–B hands-off |
