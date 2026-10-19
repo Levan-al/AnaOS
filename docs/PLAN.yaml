@@ -204,11 +204,9 @@ tasks:
     dependencies: [17]
     status: in_progress
     notes: >
-      Stock BUILD_OK 2026-10-16 (sdk_phone64_x86_64-trunk_staging-user).
-      OVERLAY_OK + lunch anaos_emulator-trunk_staging-userdebug.
-      First overlay m failed at super.img (1800MiB group); fixed 3072MiB (79047cd);
-      overlay m retry in progress 2026-10-19. Plan: docs/ROADMAP_NOW.md.
-      After OVERLAY_BUILD_OK: ARTIFACT_PULL.md then COST_OPS delete.
+      Stock BUILD_OK 2026-10-16. OVERLAY_BUILD_OK 2026-10-19T14:22:56Z
+      (anaos_emulator-trunk_staging-userdebug, super.img OK after 3072MiB fix).
+      Autopilot: docs/AUTOPILOT.md. Phase B pull+delete next.
   - id: 19
     title: Generate platform, media, shared, releasekey
     category: signing

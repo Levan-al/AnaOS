@@ -2,6 +2,7 @@
 
 Last updated: **2026-10-19**. Execution order below — do not skip phases.
 Not a substitute for `PLAN.yaml` (full backlog).
+Autopilot: [`AUTOPILOT.md`](AUTOPILOT.md).
 
 ## Snapshot
 
@@ -10,10 +11,10 @@ Not a substitute for `PLAN.yaml` (full backlog).
 | Stock `BUILD_OK` | Done (2026-10-16) |
 | Overlay lunch | Done (`anaos_emulator-trunk_staging-userdebug`) |
 | Partition fix (3072 MiB) | Done (`79047cd`) |
-| Overlay `m` retry | **In progress** — tmux `aosp-overlay` |
-| Emulator smoke | Pending `OVERLAY_BUILD_OK` |
-| Pull artifacts + **delete CPX62** | Pending human after OK |
-| Air-gap / shiba / AOSP17 | After host teardown |
+| Overlay `m` retry | **Done** — `OVERLAY_BUILD_OK` 2026-10-19T14:22:56Z + `super.img` |
+| Emulator smoke | Optional local (`EMULATOR_SMOKE.md`) |
+| Pull artifacts + **delete CPX62** | Autopilot Phase B (needs `HCLOUD_TOKEN` for delete) |
+| Air-gap / shiba / AOSP17 | Phase C — not fully unattended |
 
 ---
 
@@ -32,13 +33,12 @@ Not a substitute for `PLAN.yaml` (full backlog).
 
 ## Phase B — Immediately after overlay OK
 
-**Owner:** human + agent assist. **Cost-critical.**
+**Owner:** autopilot (`remote-autopilot` + `local-autopilot.ps1`). **Cost-critical.**
 
-1. Confirm markers: `OVERLAY_BUILD_OK`, `BRINGUP.txt` / `SLEEP_REPORT.txt`  
-2. Pull artifacts off Hetzner (see `ARTIFACT_PULL.md`) before delete  
-3. Optional smoke when a local emulator host exists (`EMULATOR_SMOKE.md`, `verify-anaos-props.sh`)  
-4. **Delete** `anaos-build` CPX62 in Hetzner Console (`COST_OPS.md`) — power-off is not enough  
-5. Revoke build API token when rental ends  
+1. Markers + packed `/opt/anaos/artifacts-ready`  
+2. Pull to `anaos-emulator-out/` (see `ARTIFACT_PULL.md`)  
+3. **Delete** `anaos-build` via Hetzner API when `HCLOUD_TOKEN` / `secrets/hcloud_token` present  
+4. Revoke build API token when rental ends  
 
 **Do not** claim device/AVB lock from emulator images alone.
 

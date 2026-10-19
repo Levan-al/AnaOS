@@ -15,6 +15,7 @@ duplicating long tables.
 | [ROADMAP_NOW.md](ROADMAP_NOW.md) | Near-term bring-up order (execute this) |
 | [ARTIFACT_PULL.md](ARTIFACT_PULL.md) | Pull images/logs before delete |
 | [AWAY_MODE.md](AWAY_MODE.md) | Unattended overlay finish |
+| [AUTOPILOT.md](AUTOPILOT.md) | Full Phase A–B hands-off |
 | [DOMAINS.md](DOMAINS.md) | DNS plan (TASK_002) |
 
 ## Build & source

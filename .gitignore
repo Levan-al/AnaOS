@@ -15,6 +15,8 @@ keys/
 *.keystore
 .env
 .env.*
+secrets/
+anaos-emulator-out/
 
 # IDE / OS
 .idea/
